@@ -72,9 +72,36 @@ footer{padding:35px 0;color:#6f7e91;text-align:center;border-top:1px solid var(-
  .hero{padding-top:105px}.avatar{height:250px}.hero-copy{font-size:16px}h1{letter-spacing:-2.5px}.statgrid{grid-template-columns:1fr}
  section{padding:70px 0}.card{padding:20px}
 }
+
+/* ===== V3 Premium Portfolio Additions ===== */
+.type-cursor{display:inline-block;width:3px;height:1em;background:var(--blue);margin-left:4px;vertical-align:-2px;animation:blink .8s infinite}
+@keyframes blink{50%{opacity:0}}
+.particles{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+.particle{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--blue);opacity:.35;animation:floatUp 20s linear infinite}
+@keyframes floatUp{from{transform:translateY(105vh)}to{transform:translateY(-10vh) translateX(70px)}}
+.section-nav{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 28px}.section-nav a{padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:#0a111d;color:#9fc7e8;font-size:12px}
+.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.detail-box{padding:16px;border:1px solid var(--line);border-radius:14px;background:#0a111c}.detail-box strong{display:block;margin-bottom:5px}.detail-box span{font-size:13px;color:var(--muted)}
+.cert-card{display:flex;flex-direction:column;height:100%}.cert-icon{height:105px;border-radius:15px;background:linear-gradient(135deg,#10213a,#0c1220);border:1px solid var(--line);display:grid;place-items:center;font-size:40px;margin-bottom:16px}.cert-actions{margin-top:auto;padding-top:18px}
+.small-btn,.social{display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#0b121e;font-size:12px;font-weight:800}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.gallery-item{height:190px;border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative;background:#0b111b}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:.35s}.gallery-item:hover img{transform:scale(1.06)}.gallery-label{position:absolute;left:9px;bottom:9px;padding:5px 8px;border-radius:8px;background:#000b;font-size:11px}
+.modal{display:none;position:fixed;inset:0;z-index:300;background:#000b;backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-box{position:relative;width:min(900px,100%);max-height:90vh;overflow:auto;background:#0b111b;border:1px solid #263650;border-radius:22px;padding:30px}.modal-close{position:absolute;right:16px;top:14px;background:#111a29;color:#fff;border:1px solid var(--line);border-radius:9px;padding:7px 10px;cursor:pointer}.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:18px}.modal-box p,.modal-box li{color:var(--muted)}
+.project.clickable{cursor:pointer}.project.clickable:focus{outline:2px solid var(--blue);outline-offset:2px}
+.resume-actions,.social-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.contact-form{display:grid;gap:12px}.contact-form input,.contact-form textarea{width:100%;padding:13px 14px;border-radius:11px;border:1px solid var(--line);background:#080f1a;color:#fff;font:inherit;outline:none}.contact-form input:focus,.contact-form textarea:focus{border-color:#4d8bb8}.contact-form textarea{min-height:125px;resize:vertical}
+.availability{margin-top:14px;color:#a8d9bb;font-size:13px}.availability:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;margin-right:7px;box-shadow:0 0 12px #22c55e}
+@media(max-width:850px){.detail-grid,.modal-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.gallery-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
+<div class="particles" aria-hidden="true">
+<span class="particle" style="left:7%;animation-duration:18s"></span>
+<span class="particle" style="left:23%;animation-duration:24s;animation-delay:2s"></span>
+<span class="particle" style="left:43%;animation-duration:20s;animation-delay:5s"></span>
+<span class="particle" style="left:65%;animation-duration:26s;animation-delay:1s"></span>
+<span class="particle" style="left:87%;animation-duration:21s;animation-delay:6s"></span>
+</div>
 <nav><div class="container nav">
 <a class="logo" href="#">Shahadab Sheikh<span>.</span></a>
 <div class="navlinks"><a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
@@ -87,12 +114,12 @@ footer{padding:35px 0;color:#6f7e91;text-align:center;border-top:1px solid var(-
 <div>
 <div class="badge"><span class="dot"></span> Open to engineering opportunities</div>
 <h1>Electronics.<br><span class="gradient">Ideas into Reality.</span></h1>
-<p class="hero-copy">Hi, I'm <b>Shahadab Sheikh</b> — an Electronics & Telecommunication Engineering student passionate about IoT, embedded systems, PCB design, robotics and practical electronics.</p>
+<p class="hero-copy">Hi, I'm <b>Shahadab Sheikh</b> — an Electronics & Telecommunication Engineering student passionate about <span id="typingText">IoT & Embedded Systems</span><span class="type-cursor"></span>, PCB design, robotics and practical electronics.</p>
 <div class="actions">
 <a class="btn primary" href="#projects">Explore My Work →</a>
 <a class="btn ghost" href="Shahadab_Sheikh_Resume.pdf" download>↓ Download Resume</a>
 </div>
-<div class="hero-meta"><a class="meta"href="https://www.google.com/maps/search/?api=1&query=Ballarpur%2C%20Maharashtra%2C%20India"target="_blank"rel="noopener">📍 Ballarpur, Maharashtra</a><span class="meta">⚡ IoT & Embedded</span><span class="meta">🧩 PCB Design</span></div>
+<div class="availability">Available for graduate / entry-level engineering opportunities</div><div class="hero-meta"><a class="meta"href="https://www.google.com/maps/search/?api=1&query=Ballarpur%2C%20Maharashtra%2C%20India"target="_blank"rel="noopener">📍 Ballarpur, Maharashtra</a><span class="meta">⚡ IoT & Embedded</span><span class="meta">🧩 PCB Design</span></div>
 </div>
 <div class="profile-wrap"><div class="profile-card">
 <div class="avatar">
@@ -131,9 +158,9 @@ footer{padding:35px 0;color:#6f7e91;text-align:center;border-top:1px solid var(-
 <section id="projects"><div class="container reveal">
 <div class="eyebrow">04 · Projects</div><h2 class="title">Engineering projects I’m proud of.</h2><p class="subtitle">Academic projects focused on practical electronics, IoT, robotics and automation.</p>
 <div class="cards three">
-<div class="card project"><div class="project-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 16h18M5 16l2-7h10l2 7M8 9V6h8v3M6 19h2m8 0h2"/><circle cx="7" cy="16" r="2"/><circle cx="17" cy="16" r="2"/></svg></div><div class="project-body"><span class="eyebrow">Major B.Tech Project</span><h3>Floating Water Surface Waste Collector Robot</h3><p>Robotic system concept for collecting floating debris from water surfaces, combining mechanical collection with electronics and control.</p><div class="project-foot">Robotics · IoT · Embedded · Environmental Tech</div></div></div>
-<div class="card project"><div class="project-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M7 7h10M7 11h10M7 15h6"/></svg></div><div class="project-body"><span class="eyebrow">Minor B.Tech Project</span><h3>Smart Notice Board</h3><p>IoT-based digital notice board for wireless content updates and dynamic information display using an LED matrix.</p><div class="project-foot">ESP8266 · LED Matrix · Wi-Fi · IoT</div></div></div>
-<div class="card project"><div class="project-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/><path d="M4 17H2v-5h5l3-4h5l3 4h4v5h-2M10 8l-1-3h4l1 3"/></svg></div><div class="project-body"><span class="eyebrow">Diploma Final Project</span><h3>Remote-Controlled RoboCar</h3><p>Wireless robotic vehicle designed to explore motor control, embedded logic and remote movement.</p><div class="project-foot">Robotics · Embedded · Motor Control</div></div></div>
+<button class="card project clickable" onclick="openProject('water')" aria-label="View details of Floating Water Surface Waste Collector Robot" style="text-align:left;color:inherit"><div class="project-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 16h18M5 16l2-7h10l2 7M8 9V6h8v3M6 19h2m8 0h2"/><circle cx="7" cy="16" r="2"/><circle cx="17" cy="16" r="2"/></svg></div><div class="project-body"><span class="eyebrow">Major B.Tech Project</span><h3>Floating Water Surface Waste Collector Robot</h3><p>Robotic system concept for collecting floating debris from water surfaces, combining mechanical collection with electronics and control.</p><div class="project-foot">Robotics · IoT · Embedded · Environmental Tech</div></div></div>
+<button class="card project clickable" onclick="openProject('notice')" aria-label="View details of Smart Notice Board" style="text-align:left;color:inherit"><div class="project-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M7 7h10M7 11h10M7 15h6"/></svg></div><div class="project-body"><span class="eyebrow">Minor B.Tech Project</span><h3>Smart Notice Board</h3><p>IoT-based digital notice board for wireless content updates and dynamic information display using an LED matrix.</p><div class="project-foot">ESP8266 · LED Matrix · Wi-Fi · IoT</div></div></div>
+<button class="card project clickable" onclick="openProject('robocar')" aria-label="View details of Remote-Controlled RoboCar" style="text-align:left;color:inherit"><div class="project-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/><path d="M4 17H2v-5h5l3-4h5l3 4h4v5h-2M10 8l-1-3h4l1 3"/></svg></div><div class="project-body"><span class="eyebrow">Diploma Final Project</span><h3>Remote-Controlled RoboCar</h3><p>Wireless robotic vehicle designed to explore motor control, embedded logic and remote movement.</p><div class="project-foot">Robotics · Embedded · Motor Control</div></div></div>
 </div></div></section>
 
 <section id="skills"><div class="container reveal">
@@ -149,8 +176,60 @@ footer{padding:35px 0;color:#6f7e91;text-align:center;border-top:1px solid var(-
 <div class="tags"><span class="tag">Proteus</span><span class="tag">EasyEDA</span><span class="tag">Wokwi</span><span class="tag">ThingSpeak</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Microcontrollers</span><span class="tag">Wi-Fi</span><span class="tag">Bluetooth</span><span class="tag">IPQC</span><span class="tag">FQC</span><span class="tag">Production Testing</span><span class="tag">Sensor Integration</span></div>
 </div></section>
 
+
+<section id="internship-details"><div class="container reveal">
+<div class="eyebrow">06 · Internship Details</div><h2 class="title">Industry work & responsibilities.</h2>
+<p class="subtitle">Detailed practical exposure from electronics manufacturing and quality control.</p>
+<div class="card">
+<h3>Quality Control Intern — TrueView / Warner Electronics India Pvt. Ltd.</h3>
+<p class="muted">Electronics Manufacturing · Production Testing · IPQC · FQC · SMT</p>
+<div class="detail-grid">
+<div class="detail-box"><strong>Production Testing</strong><span>Functional checks and product verification of camera units.</span></div>
+<div class="detail-box"><strong>IPQC</strong><span>In-process quality inspection during manufacturing.</span></div>
+<div class="detail-box"><strong>FQC</strong><span>Final quality inspection before product release.</span></div>
+<div class="detail-box"><strong>SMT</strong><span>Exposure to surface-mount manufacturing and quality workflow.</span></div>
+<div class="detail-box"><strong>Camera Testing</strong><span>Lens, dust, focus, mic, speaker, LEDs and model verification.</span></div>
+<div class="detail-box"><strong>Tools / Applications</strong><span>IPCProductCheck and internal production-testing workflows.</span></div>
+</div>
+</div></div></section>
+
+<section id="certifications"><div class="container reveal">
+<div class="eyebrow">07 · Certifications</div><h2 class="title">Certificates & professional learning.</h2>
+<p class="subtitle">Upload the real certificate files using the filenames below to activate the buttons.</p>
+<div class="cards three">
+<div class="card cert-card"><div class="cert-icon">🏆</div><span class="eyebrow">Internship</span><h3>Quality Control Internship Certificate</h3><p class="muted">TrueView / Warner Electronics India Pvt. Ltd.</p><div class="cert-actions"><a class="small-btn" href="certificate-qc.pdf" target="_blank">View Certificate</a></div></div>
+<div class="card cert-card"><div class="cert-icon">📜</div><span class="eyebrow">NSDC</span><h3>Skill Development Certificate</h3><p class="muted">Add your verified NSDC certificate details.</p><div class="cert-actions"><a class="small-btn" href="certificate-nsdc.pdf" target="_blank">View Certificate</a></div></div>
+<div class="card cert-card"><div class="cert-icon">⚙️</div><span class="eyebrow">Technical Training</span><h3>Electronics / IoT Course</h3><p class="muted">Add your technical training certificate and issuer.</p><div class="cert-actions"><a class="small-btn" href="certificate-technical.pdf" target="_blank">View Certificate</a></div></div>
+</div></div></section>
+
+<section id="achievements"><div class="container reveal">
+<div class="eyebrow">08 · Achievements</div><h2 class="title">Achievements & highlights.</h2>
+<div class="cards three">
+<div class="card"><h3>Engineering Projects</h3><p class="muted">Built academic projects spanning IoT, robotics, embedded systems and electronics automation.</p></div>
+<div class="card"><h3>Research Interest</h3><p class="muted">Research work around IoT-based smart surveillance, wireless communication and practical electronics systems.</p></div>
+<div class="card"><h3>Industry Exposure</h3><p class="muted">Hands-on experience with production testing, IPQC, FQC, SMT and camera quality workflows.</p></div>
+</div></div></section>
+
+<section id="gallery"><div class="container reveal">
+<div class="eyebrow">09 · Project Gallery</div><h2 class="title">Builds, boards & engineering work.</h2>
+<p class="subtitle">Replace the placeholder filenames with your actual project and internship photographs.</p>
+<div class="gallery-grid">
+<div class="gallery-item"><img src="water-robot.jpg" alt="Floating Water Surface Waste Collector Robot"><span class="gallery-label">Water Waste Collector</span></div>
+<div class="gallery-item"><img src="smart-notice-board.jpg" alt="Smart Notice Board"><span class="gallery-label">Smart Notice Board</span></div>
+<div class="gallery-item"><img src="pcb.jpg" alt="PCB Design"><span class="gallery-label">PCB Design</span></div>
+<div class="gallery-item"><img src="camera-testing.jpg" alt="Camera Testing"><span class="gallery-label">Camera Testing</span></div>
+</div></div></section>
+
+<section><div class="container reveal"><div class="eyebrow">10 · Social</div><h2 class="title">Connect with me.</h2>
+<div class="social-row">
+<a class="social" href="https://github.com/SHahADAB17" target="_blank" rel="noopener">⌘ GitHub</a>
+<a class="social" href="https://www.linkedin.com/in/shahadab-sheikh-s1k7/" target="_blank" rel="noopener">in LinkedIn</a>
+<a class="social" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">💬 WhatsApp</a>
+<a class="social" href="#" target="_blank" rel="noopener">◎ Instagram</a>
+</div></div></section>
+
 <section><div class="container reveal">
-<div class="resume"><div><div class="eyebrow">06 · Resume</div><h2 class="title">Take my profile with you.</h2><p class="subtitle">Download the resume version supplied for this portfolio. Replace the PDF later with your final ATS-optimized resume whenever you update it.</p><a class="btn primary" href="Shahadab_Sheikh_Resume.pdf" download>↓ Download Resume PDF</a></div>
+<div class="resume"><div><div class="eyebrow">06 · Resume</div><h2 class="title">Take my profile with you.</h2><p class="subtitle">Download the resume version supplied for this portfolio. Replace the PDF later with your final ATS-optimized resume whenever you update it.</p><div class="resume-actions"><a class="btn primary" href="Shahadab_Sheikh_Resume.pdf" target="_blank">↗ View Resume</a><a class="btn ghost" href="Shahadab_Sheikh_Resume.pdf" download>↓ Download Resume</a></div></div>
 <div class="resume-preview"><img src="resume.jpg" alt="Shahadab Sheikh resume preview"></div></div>
 </div></section>
 
@@ -162,14 +241,57 @@ footer{padding:35px 0;color:#6f7e91;text-align:center;border-top:1px solid var(-
 <a class="card contact-card" href="https://github.com/SHahADAB17" target="_blank" rel="noopener"><div class="icon">⌘</div><div><strong>GitHub</strong><span>SHahADAB17</span></div></a>
 <a class="card contact-card"href="https://www.google.com/maps/search/?api=1&query=Ballarpur%2C%20Maharashtra%2C%20India"target="_blank"rel="noopener"><div class="icon">📍</div><div><strong>Location</strong><span>Ballarpur, Maharashtra, India</span></div></a>
 </div>
+<div class="card" style="margin-top:18px">
+<h3>Send me a message</h3><p class="muted">The form opens your email app with the message prepared.</p>
+<form class="contact-form" onsubmit="sendMessage(event)">
+<input id="contactName" type="text" placeholder="Your name" required>
+<input id="contactEmail" type="email" placeholder="Your email" required>
+<textarea id="contactMessage" placeholder="Your message" required></textarea>
+<button class="btn primary" type="submit">✉ Send Message</button>
+</form>
+</div>
 </div></section>
 
+
+<div id="projectModal" class="modal" onclick="closeProject(event)">
+<div class="modal-box" onclick="event.stopPropagation()">
+<button class="modal-close" onclick="closeProject()">✕</button>
+<div id="modalContent"></div>
+</div></div>
+
 <footer>© 2026 Shahadab Sheikh · Electronics & Telecommunication Engineering · Built with HTML, CSS & JavaScript</footer>
+
 
 <script>
 function toggleMenu(){const m=document.getElementById('mobileMenu');m.style.display=m.style.display==='block'?'none':'block'}
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+const roles=["IoT & Embedded Systems","PCB Design","Electronics Testing","Robotics & Automation","Wireless Communication"];
+let ri=0,ci=0,del=false;
+function typeRole(){const e=document.getElementById("typingText");if(!e)return;const w=roles[ri];ci+=del?-1:1;e.textContent=w.slice(0,ci);if(!del&&ci===w.length){del=true;return setTimeout(typeRole,1100)}if(del&&ci===0){del=false;ri=(ri+1)%roles.length}setTimeout(typeRole,del?45:75)} typeRole();
+
+const projects={
+water:{title:"Floating Water Surface Waste Collector Robot",tag:"Major B.Tech Project",overview:"A robotic system concept for collecting floating debris from water surfaces by combining a floating platform, collection mechanism, electronics and control.",problem:"Floating plastic and debris can be difficult and time-consuming to collect manually.",tech:"Embedded Systems · Motors · Sensors · IoT · Robotics",role:"System concept, electronics integration, control logic and project documentation.",features:["Floating platform","Waste collection mechanism","Remote/automated control","Sensor integration","Environmental cleanup"],img:"water-robot.jpg"},
+notice:{title:"Smart Notice Board",tag:"Minor B.Tech Project",overview:"IoT-based digital notice board for wireless content updates and dynamic LED-matrix information display.",problem:"Traditional notice boards require repeated manual replacement of information.",tech:"ESP8266 · LED Matrix · Wi-Fi · IoT",role:"Firmware, display logic, wireless communication and interface planning.",features:["Wireless updates","Dynamic display","Remote content management","LED matrix","IoT connectivity"],img:"smart-notice-board.jpg"},
+robocar:{title:"Remote-Controlled RoboCar",tag:"Diploma Final Project",overview:"Wireless robotic vehicle developed to explore motor control, embedded logic and remote movement.",problem:"Create a simple mobile robot with reliable remote directional control.",tech:"Microcontroller · Motor Driver · DC Motors · Wireless Control",role:"Circuit integration, motor control, assembly and testing.",features:["Forward/reverse movement","Left/right steering","Wireless control","Motor driver interface"],img:"robocar.jpg"}};
+
+function openProject(k){const p=projects[k];document.getElementById("modalContent").innerHTML=
+`<span class="eyebrow">${p.tag}</span><h2 class="title">${p.title}</h2>
+<div class="modal-grid"><div>
+<h3>Project Overview</h3><p>${p.overview}</p>
+<h3>Problem Statement</h3><p>${p.problem}</p>
+<h3>Technologies</h3><p>${p.tech}</p>
+<h3>Your Role</h3><p>${p.role}</p></div>
+<div><img src="${p.img}" onerror="this.style.display='none'" alt="${p.title}" style="width:100%;height:220px;object-fit:cover;border-radius:15px;border:1px solid var(--line)">
+<h3>Key Features</h3><ul>${p.features.map(x=>`<li>${x}</li>`).join("")}</ul>
+<h3>Result</h3><p>Add your final test results, measurements or demonstration video here.</p>
+<div class="resume-actions"><a class="btn ghost" href="https://github.com/SHahADAB17" target="_blank" rel="noopener">⌘ GitHub</a></div>
+</div></div>`;
+document.getElementById("projectModal").classList.add("show");document.body.style.overflow="hidden"}
+function closeProject(e){if(e&&e.target!==document.getElementById("projectModal"))return;document.getElementById("projectModal").classList.remove("show");document.body.style.overflow=""}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeProject({target:document.getElementById("projectModal")})});
+function sendMessage(e){e.preventDefault();const n=document.getElementById("contactName").value,em=document.getElementById("contactEmail").value,m=document.getElementById("contactMessage").value;location.href="mailto:shahadabsheikh13@gmail.com?subject="+encodeURIComponent("Portfolio Contact from "+n)+"&body="+encodeURIComponent("Name: "+n+"\nEmail: "+em+"\n\n"+m)}
 </script>
 </body>
 </html>
