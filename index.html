@@ -40,6 +40,7 @@ font-weight:800;font-size:14px;border:1px solid var(--line);transition:.25s;curs
 .profile-wrap{display:flex;justify-content:center}.profile-card{width:min(360px,100%);padding:18px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(145deg,rgba(20,31,52,.9),rgba(9,13,22,.85));box-shadow:var(--shadow);position:relative}
 .profile-card:before{content:"";position:absolute;inset:-1px;border-radius:30px;padding:1px;background:linear-gradient(140deg,rgba(56,189,248,.35),transparent,rgba(139,92,246,.35));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
 .avatar{height:300px;border-radius:22px;background:radial-gradient(circle at 50% 35%,#263b62,#101827 65%);display:grid;place-items:center;overflow:hidden;position:relative}
+ .avatar img {width: 100%;height: 100%;object-fit: cover;border-radius: 22px;}
 .avatar span{font-size:86px;font-weight:900;letter-spacing:-7px;color:#dbeafe;text-shadow:0 10px 35px #000}
 .profile-caption{padding:16px 5px 3px;display:flex;justify-content:space-between;gap:10px}.profile-caption small{color:var(--muted)}
 section{padding:95px 0;border-top:1px solid var(--line)}.eyebrow{color:#7dd3fc;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
@@ -94,7 +95,9 @@ footer{padding:35px 0;color:#6f7e91;text-align:center;border-top:1px solid var(-
 <div class="hero-meta"><span class="meta">📍 Ballarpur, Maharashtra</span><span class="meta">⚡ IoT & Embedded</span><span class="meta">🧩 PCB Design</span></div>
 </div>
 <div class="profile-wrap"><div class="profile-card">
-<div class="avatar"><span>SS</span></div>
+<div class="avatar">
+    <img src="profile.jpg" alt="Shahadab Sheikh">
+</div>
 <div class="profile-caption"><div><b>Shahadab Sheikh</b><br><small>Electronics & Telecommunication</small></div><small>2026</small></div>
 </div></div>
 </div></header>
