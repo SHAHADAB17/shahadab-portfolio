@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b14">
+<meta name="description" content="Shahadab Sheikh — Electronics & Telecommunication Engineer portfolio. IoT, embedded systems, PCB design, robotics and electronics quality control.">
+<title>Shahadab Sheikh | Electronics Engineer</title>
+<style>
+:root{
+ --bg:#060910;--bg2:#0a1020;--card:rgba(15,23,42,.72);--text:#f8fafc;--muted:#94a3b8;
+ --line:rgba(148,163,184,.15);--blue:#38bdf8;--violet:#8b5cf6;--cyan:#22d3ee;
+ --shadow:0 25px 80px rgba(0,0,0,.38);--max:1160px
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+ color:var(--text);background:
+ radial-gradient(circle at 12% 8%,rgba(56,189,248,.12),transparent 25%),
+ radial-gradient(circle at 88% 20%,rgba(139,92,246,.12),transparent 28%),
+ linear-gradient(180deg,#060910,#080d18 45%,#050810);line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}.container{width:min(var(--max),92%);margin:auto}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,9,16,.7);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;letter-spacing:-.5px;font-size:20px}.logo i{font-style:normal;color:var(--blue)}
+.navlinks{display:flex;gap:24px;color:#aab6c8;font-size:14px}.navlinks a{transition:.25s}.navlinks a:hover{color:#fff}
+.menu{display:none;border:1px solid var(--line);background:#0d1422;color:#fff;border-radius:10px;padding:8px 10px}
+.hero{min-height:100vh;padding:150px 0 90px;position:relative;display:flex;align-items:center}
+.grid-hero{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(56,189,248,.22);background:rgba(14,32,52,.65);
+color:#bdeaff;padding:8px 13px;border-radius:999px;font-size:13px;margin-bottom:22px}
+.dot{width:8px;height:8px;background:#22c55e;border-radius:50%;box-shadow:0 0 16px #22c55e}
+h1{font-size:clamp(44px,7vw,82px);line-height:.98;letter-spacing:-4px}
+.gradient{background:linear-gradient(100deg,#fff 20%,#7dd3fc 52%,#a78bfa 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-copy{font-size:18px;color:var(--muted);max-width:700px;margin:25px 0 30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 17px;border-radius:12px;
+font-weight:800;font-size:14px;border:1px solid var(--line);transition:.25s;cursor:pointer}
+.btn:hover{transform:translateY(-2px);border-color:#395172}.primary{background:#f8fafc;color:#07101c}.ghost{background:rgba(15,23,42,.7)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;color:#a7b3c4;font-size:13px}.meta{border:1px solid var(--line);padding:7px 10px;border-radius:10px;background:#0b111c}
+.profile-wrap{display:flex;justify-content:center}.profile-card{width:min(360px,100%);padding:18px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(145deg,rgba(20,31,52,.9),rgba(9,13,22,.85));box-shadow:var(--shadow);position:relative}
+.profile-card:before{content:"";position:absolute;inset:-1px;border-radius:30px;padding:1px;background:linear-gradient(140deg,rgba(56,189,248,.35),transparent,rgba(139,92,246,.35));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.avatar{height:300px;border-radius:22px;background:radial-gradient(circle at 50% 35%,#263b62,#101827 65%);display:grid;place-items:center;overflow:hidden;position:relative}
+.avatar span{font-size:86px;font-weight:900;letter-spacing:-7px;color:#dbeafe;text-shadow:0 10px 35px #000}
+.profile-caption{padding:16px 5px 3px;display:flex;justify-content:space-between;gap:10px}.profile-caption small{color:var(--muted)}
+section{padding:95px 0;border-top:1px solid var(--line)}.eyebrow{color:#7dd3fc;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.title{font-size:34px;letter-spacing:-1.5px;margin:7px 0}.subtitle{color:var(--muted);max-width:720px;margin-bottom:35px}
+.cards{display:grid;gap:18px}.two{grid-template-columns:repeat(2,1fr)}.three{grid-template-columns:repeat(3,1fr)}
+.card{background:linear-gradient(180deg,rgba(15,23,42,.78),rgba(8,13,23,.82));border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 15px 45px rgba(0,0,0,.16);transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:rgba(125,211,252,.24)}
+.card h3{font-size:19px;margin-bottom:6px}.muted{color:var(--muted)}
+.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.stat{padding:17px;border-radius:15px;background:#0a111d;border:1px solid var(--line)}.stat strong{display:block;font-size:24px}.stat span{font-size:12px;color:var(--muted)}
+.timeline{position:relative;margin-left:8px;border-left:1px solid #263850;padding-left:28px}.timeline-item{position:relative;margin-bottom:32px}.timeline-item:last-child{margin-bottom:0}
+.timeline-item:before{content:"";position:absolute;left:-35px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 5px #112139}
+.timeline-top{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.date{font-size:12px;color:#8db9dc;border:1px solid var(--line);padding:5px 9px;border-radius:999px}
+ul{padding-left:18px;color:var(--muted);margin-top:10px}li{margin:5px 0}
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}.skill-row{padding:18px;border:1px solid var(--line);border-radius:16px;background:#0a111c}.skill-head{display:flex;justify-content:space-between;font-size:14px;margin-bottom:9px}.bar{height:7px;border-radius:999px;background:#182231;overflow:hidden}.fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--violet))}
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}.tag{font-size:13px;color:#cbd5e1;border:1px solid var(--line);padding:8px 11px;border-radius:999px;background:#0b121e}
+.project{min-height:275px;display:flex;flex-direction:column;overflow:hidden;padding:0}.project-visual{height:125px;background:radial-gradient(circle at 30% 30%,rgba(56,189,248,.35),transparent 25%),linear-gradient(135deg,#101c31,#0b0f18);
+display:grid;place-items:center;border-bottom:1px solid var(--line)}.project-visual svg{width:58px;height:58px;stroke:#bdeaff}.project-body{padding:22px;display:flex;flex-direction:column;flex:1}.project-body p{color:var(--muted);font-size:14px}.project-foot{margin-top:auto;padding-top:18px;color:#8bc8f1;font-size:12px}
+.edu{display:flex;gap:15px}.icon{min-width:42px;height:42px;border-radius:12px;background:#102139;border:1px solid #233b5a;display:grid;place-items:center;color:#7dd3fc}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.contact-card{display:flex;align-items:center;gap:14px}.contact-card .icon{min-width:45px}.contact-card strong{display:block}.contact-card span{color:var(--muted);font-size:13px}
+.resume{display:grid;grid-template-columns:1fr .85fr;gap:25px;align-items:center}.resume-preview{height:330px;border-radius:18px;border:1px solid var(--line);overflow:hidden;background:#111}.resume-preview img{width:100%;height:100%;object-fit:cover;object-position:top}
+footer{padding:35px 0;color:#6f7e91;text-align:center;border-top:1px solid var(--line);font-size:13px}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+#mobileMenu{display:none}
+@media(max-width:850px){
+ .navlinks{display:none}.menu{display:block}.grid-hero{grid-template-columns:1fr}.hero{padding-top:120px}.profile-wrap{order:-1}
+ .two,.three,.skill-grid,.contact-grid,.resume{grid-template-columns:1fr}.statgrid{grid-template-columns:1fr 1fr 1fr}.title{font-size:29px}
+}
+@media(max-width:520px){
+ .hero{padding-top:105px}.avatar{height:250px}.hero-copy{font-size:16px}h1{letter-spacing:-2.5px}.statgrid{grid-template-columns:1fr}
+ section{padding:70px 0}.card{padding:20px}
+}
+</style>
+</head>
+<body>
+<nav><div class="container nav">
+<a class="logo" href="#">Shahadab<span>.</span></a>
+<div class="navlinks"><a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+<button class="menu" onclick="toggleMenu()">☰</button>
+</div><div id="mobileMenu" style="display:none;padding:12px 4%;border-top:1px solid var(--line);background:#080d17">
+<a href="#about" onclick="toggleMenu()">About</a> · <a href="#experience" onclick="toggleMenu()">Experience</a> · <a href="#projects" onclick="toggleMenu()">Projects</a> · <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div></nav>
+
+<header class="hero"><div class="container grid-hero reveal">
+<div>
+<div class="badge"><span class="dot"></span> Open to engineering opportunities</div>
+<h1>Electronics.<br><span class="gradient">Ideas into Reality.</span></h1>
+<p class="hero-copy">Hi, I'm <b>Shahadab Sheikh</b> — an Electronics & Telecommunication Engineering student passionate about IoT, embedded systems, PCB design, robotics and practical electronics.</p>
+<div class="actions">
+<a class="btn primary" href="#projects">Explore My Work →</a>
+<a class="btn ghost" href="Shahadab_Sheikh_Resume.pdf" download>↓ Download Resume</a>
+</div>
+<div class="hero-meta"><span class="meta">📍 Ballarpur, Maharashtra</span><span class="meta">⚡ IoT & Embedded</span><span class="meta">🧩 PCB Design</span></div>
+</div>
+<div class="profile-wrap"><div class="profile-card">
+<div class="avatar"><span>SS</span></div>
+<div class="profile-caption"><div><b>Shahadab Sheikh</b><br><small>Electronics & Telecommunication</small></div><small>2026</small></div>
+</div></div>
+</div></header>
+
+<section id="about"><div class="container reveal">
+<div class="eyebrow">01 · About</div><h2 class="title">Building with electronics, one system at a time.</h2><p class="subtitle">My work combines engineering fundamentals with hands-on experimentation in embedded hardware, IoT, robotics, PCB design and manufacturing quality.</p>
+<div class="cards two">
+<div class="card"><h3>Professional Summary</h3><p class="muted">Electronics & Telecommunication Engineering student with practical exposure to IoT, embedded systems, robotics and PCB design. Skilled in C/C++, Python, HTML/CSS and tools including MATLAB, Proteus, Wokwi and EasyEDA. Interested in building reliable, real-world electronic systems.</p>
+<div class="statgrid"><div class="stat"><strong>IoT</strong><span>Connected systems</span></div><div class="stat"><strong>PCB</strong><span>Design & fabrication</span></div><div class="stat"><strong>QC</strong><span>Testing mindset</span></div></div></div>
+<div class="card"><h3>Career Focus</h3><p class="muted">Target roles: Electronics Engineer, Embedded Engineer, IoT Engineer, PCB Design Engineer, Electronics Testing / Quality Engineer and Graduate Engineer Trainee.</p><div class="tags"><span class="tag">Embedded Systems</span><span class="tag">IoT</span><span class="tag">Electronics Testing</span><span class="tag">Robotics</span><span class="tag">PCB</span><span class="tag">Sensors</span></div></div>
+</div></div></section>
+
+<section id="experience"><div class="container reveal">
+<div class="eyebrow">02 · Experience</div><h2 class="title">Hands-on industry exposure.</h2><p class="subtitle">Experience across electronics manufacturing, PCB work, IoT and robotics.</p>
+<div class="timeline">
+<div class="timeline-item"><div class="timeline-top"><div><h3>Quality Control Intern — TrueView / Warner Electronics India Pvt. Ltd.</h3><p class="muted">Electronics Manufacturing · Production Testing</p></div><span class="date">Dec 2025 – Present</span></div><ul><li>Worked with production testing, FQC, IPQC and SMT-related quality processes.</li><li>Performed visual inspection, lens/dust checks, model verification and functional testing of camera products.</li><li>Worked with Wi-Fi and 4G camera testing workflows and internal testing applications.</li></ul></div>
+<div class="timeline-item"><div class="timeline-top"><div><h3>PCB Design & Fabrication Intern — VS Informatics Pvt. Ltd.</h3><p class="muted">Dual-Layer PCB Design</p></div><span class="date">Apr – May 2025</span></div><ul><li>Worked on dual-layer PCB design and fabrication workflow.</li><li>Gained practical exposure to circuit layout, design tools and electronics documentation.</li></ul></div>
+<div class="timeline-item"><div class="timeline-top"><div><h3>IoT & Robotics Intern — Maximum Solutions</h3><p class="muted">Microcontrollers & Sensors</p></div><span class="date">Jul – Aug 2022</span></div><ul><li>Developed IoT and robotics-based applications using microcontrollers and sensors.</li></ul></div>
+<div class="timeline-item"><div class="timeline-top"><div><h3>NGO Intern — Anmol Foundation</h3></div><span class="date">Feb 2022</span></div></div>
+</div></div></section>
+
+<section id="education"><div class="container reveal">
+<div class="eyebrow">03 · Education</div><h2 class="title">Education & academic foundation.</h2>
+<div class="cards two">
+<div class="card edu"><div class="icon">🎓</div><div><h3>Bachelor of Technology</h3><p>Electronics & Telecommunication Engineering</p><p class="muted">G H Raisoni College of Engineering & Management, Nagpur</p><span class="date">Sep 2023 – Sep 2026</span></div></div>
+<div class="card edu"><div class="icon">⚙</div><div><h3>Diploma</h3><p>Electronics & Telecommunication · 75.29%</p><p class="muted">Somayya Polytechnic, Chandrapur</p><span class="date">Jul 2021 – Jul 2023</span></div></div>
+<div class="card edu"><div class="icon">📘</div><div><h3>HSC</h3><p>Guru Nanak College of Science, Ballarpur · 53%</p><span class="date">Jul 2017 – Aug 2021</span></div></div>
+<div class="card edu"><div class="icon">📗</div><div><h3>SSC</h3><p>Sai Baba Gyanpeeth Convent, Ballarpur</p><span class="date">Mar 2010 – May 2019</span></div></div>
+</div></div></section>
+
+<section id="projects"><div class="container reveal">
+<div class="eyebrow">04 · Projects</div><h2 class="title">Engineering projects I’m proud of.</h2><p class="subtitle">Academic projects focused on practical electronics, IoT, robotics and automation.</p>
+<div class="cards three">
+<div class="card project"><div class="project-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 16h18M5 16l2-7h10l2 7M8 9V6h8v3M6 19h2m8 0h2"/><circle cx="7" cy="16" r="2"/><circle cx="17" cy="16" r="2"/></svg></div><div class="project-body"><span class="eyebrow">Major B.Tech Project</span><h3>Floating Water Surface Waste Collector Robot</h3><p>Robotic system concept for collecting floating debris from water surfaces, combining mechanical collection with electronics and control.</p><div class="project-foot">Robotics · IoT · Embedded · Environmental Tech</div></div></div>
+<div class="card project"><div class="project-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M7 7h10M7 11h10M7 15h6"/></svg></div><div class="project-body"><span class="eyebrow">Minor B.Tech Project</span><h3>Smart Notice Board</h3><p>IoT-based digital notice board for wireless content updates and dynamic information display using an LED matrix.</p><div class="project-foot">ESP8266 · LED Matrix · Wi-Fi · IoT</div></div></div>
+<div class="card project"><div class="project-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/><path d="M4 17H2v-5h5l3-4h5l3 4h4v5h-2M10 8l-1-3h4l1 3"/></svg></div><div class="project-body"><span class="eyebrow">Diploma Final Project</span><h3>Remote-Controlled RoboCar</h3><p>Wireless robotic vehicle designed to explore motor control, embedded logic and remote movement.</p><div class="project-foot">Robotics · Embedded · Motor Control</div></div></div>
+</div></div></section>
+
+<section id="skills"><div class="container reveal">
+<div class="eyebrow">05 · Skills</div><h2 class="title">Technical toolkit.</h2><p class="subtitle">A visual snapshot of my current technical strengths.</p>
+<div class="skill-grid">
+<div class="skill-row"><div class="skill-head"><span>Embedded Systems</span><b>85%</b></div><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+<div class="skill-row"><div class="skill-head"><span>IoT & Sensors</span><b>88%</b></div><div class="bar"><div class="fill" style="width:88%"></div></div></div>
+<div class="skill-row"><div class="skill-head"><span>PCB Design</span><b>82%</b></div><div class="bar"><div class="fill" style="width:82%"></div></div></div>
+<div class="skill-row"><div class="skill-head"><span>C / C++</span><b>70%</b></div><div class="bar"><div class="fill" style="width:70%"></div></div></div>
+<div class="skill-row"><div class="skill-head"><span>Python</span><b>68%</b></div><div class="bar"><div class="fill" style="width:68%"></div></div></div>
+<div class="skill-row"><div class="skill-head"><span>MATLAB</span><b>72%</b></div><div class="bar"><div class="fill" style="width:72%"></div></div></div>
+</div>
+<div class="tags"><span class="tag">Proteus</span><span class="tag">EasyEDA</span><span class="tag">Wokwi</span><span class="tag">ThingSpeak</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Microcontrollers</span><span class="tag">Wi-Fi</span><span class="tag">Bluetooth</span><span class="tag">IPQC</span><span class="tag">FQC</span><span class="tag">Production Testing</span><span class="tag">Sensor Integration</span></div>
+</div></section>
+
+<section><div class="container reveal">
+<div class="resume"><div><div class="eyebrow">06 · Resume</div><h2 class="title">Take my profile with you.</h2><p class="subtitle">Download the resume version supplied for this portfolio. Replace the PDF later with your final ATS-optimized resume whenever you update it.</p><a class="btn primary" href="Shahadab_Sheikh_Resume.pdf" download>↓ Download Resume PDF</a></div>
+<div class="resume-preview"><img src="resume.jpg" alt="Shahadab Sheikh resume preview"></div></div>
+</div></section>
+
+<section id="contact"><div class="container reveal">
+<div class="eyebrow">07 · Contact</div><h2 class="title">Let’s build something useful.</h2><p class="subtitle">For internships, graduate roles, electronics projects or collaboration, you can reach me here.</p>
+<div class="contact-grid">
+<a class="card contact-card" href="mailto:shahadabsheikh13@gmail.com"><div class="icon">✉</div><div><strong>Email</strong><span>shahadabsheikh13@gmail.com</span></div></a>
+<a class="card contact-card" href="https://www.linkedin.com/in/shahadab-sheikh-s1k7/" target="_blank" rel="noopener"><div class="icon">in</div><div><strong>LinkedIn</strong><span>Shahadab Sheikh</span></div></a>
+<a class="card contact-card" href="https://github.com/SHahADAB17" target="_blank" rel="noopener"><div class="icon">⌘</div><div><strong>GitHub</strong><span>SHahADAB17</span></div></a>
+<div class="card contact-card"><div class="icon">📍</div><div><strong>Location</strong><span>Ballarpur, Maharashtra, India</span></div></div>
+</div>
+</div></section>
+
+<footer>© 2026 Shahadab Sheikh · Electronics & Telecommunication Engineering · Built with HTML, CSS & JavaScript</footer>
+
+<script>
+function toggleMenu(){const m=document.getElementById('mobileMenu');m.style.display=m.style.display==='block'?'none':'block'}
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
