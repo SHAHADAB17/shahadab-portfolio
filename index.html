@@ -1,297 +1,873 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#070b14">
-<meta name="description" content="Shahadab Sheikh — Electronics & Telecommunication Engineer portfolio. IoT, embedded systems, PCB design, robotics and electronics quality control.">
-<title>Shahadab Sheikh | Electronics Engineer</title>
-<style>
-:root{
- --bg:#060910;--bg2:#0a1020;--card:rgba(15,23,42,.72);--text:#f8fafc;--muted:#94a3b8;
- --line:rgba(148,163,184,.15);--blue:#38bdf8;--violet:#8b5cf6;--cyan:#22d3ee;
- --shadow:0 25px 80px rgba(0,0,0,.38);--max:1160px
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
- color:var(--text);background:
- radial-gradient(circle at 12% 8%,rgba(56,189,248,.12),transparent 25%),
- radial-gradient(circle at 88% 20%,rgba(139,92,246,.12),transparent 28%),
- linear-gradient(180deg,#060910,#080d18 45%,#050810);line-height:1.65;overflow-x:hidden}
-a{color:inherit;text-decoration:none}.container{width:min(var(--max),92%);margin:auto}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,9,16,.7);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:900;letter-spacing:-.5px;font-size:20px}.logo i{font-style:normal;color:var(--blue)}
-.navlinks{display:flex;gap:24px;color:#aab6c8;font-size:14px}.navlinks a{transition:.25s}.navlinks a:hover{color:#fff}
-.menu{display:none;border:1px solid var(--line);background:#0d1422;color:#fff;border-radius:10px;padding:8px 10px}
-.hero{min-height:100vh;padding:150px 0 90px;position:relative;display:flex;align-items:center}
-.grid-hero{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}
-.badge{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(56,189,248,.22);background:rgba(14,32,52,.65);
-color:#bdeaff;padding:8px 13px;border-radius:999px;font-size:13px;margin-bottom:22px}
-.dot{width:8px;height:8px;background:#22c55e;border-radius:50%;box-shadow:0 0 16px #22c55e}
-h1{font-size:clamp(44px,7vw,82px);line-height:.98;letter-spacing:-4px}
-.gradient{background:linear-gradient(100deg,#fff 20%,#7dd3fc 52%,#a78bfa 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-copy{font-size:18px;color:var(--muted);max-width:700px;margin:25px 0 30px}
-.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 17px;border-radius:12px;
-font-weight:800;font-size:14px;border:1px solid var(--line);transition:.25s;cursor:pointer}
-.btn:hover{transform:translateY(-2px);border-color:#395172}.primary{background:#f8fafc;color:#07101c}.ghost{background:rgba(15,23,42,.7)}
-.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;color:#a7b3c4;font-size:13px}.meta{border:1px solid var(--line);padding:7px 10px;border-radius:10px;background:#0b111c}
-.profile-wrap{display:flex;justify-content:center}.profile-card{width:min(360px,100%);padding:18px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(145deg,rgba(20,31,52,.9),rgba(9,13,22,.85));box-shadow:var(--shadow);position:relative}
-.profile-card:before{content:"";position:absolute;inset:-1px;border-radius:30px;padding:1px;background:linear-gradient(140deg,rgba(56,189,248,.35),transparent,rgba(139,92,246,.35));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
-.avatar{height:300px;border-radius:22px;background:radial-gradient(circle at 50% 35%,#263b62,#101827 65%);display:grid;place-items:center;overflow:hidden;position:relative}
- .avatar img {width: 100%;height: 100%;object-fit: cover;border-radius: 22px;}
-.avatar span{font-size:86px;font-weight:900;letter-spacing:-7px;color:#dbeafe;text-shadow:0 10px 35px #000}
-.profile-caption{padding:16px 5px 3px;display:flex;justify-content:space-between;gap:10px}.profile-caption small{color:var(--muted)}
-section{padding:95px 0;border-top:1px solid var(--line)}.eyebrow{color:#7dd3fc;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
-.title{font-size:34px;letter-spacing:-1.5px;margin:7px 0}.subtitle{color:var(--muted);max-width:720px;margin-bottom:35px}
-.cards{display:grid;gap:18px}.two{grid-template-columns:repeat(2,1fr)}.three{grid-template-columns:repeat(3,1fr)}
-.card{background:linear-gradient(180deg,rgba(15,23,42,.78),rgba(8,13,23,.82));border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 15px 45px rgba(0,0,0,.16);transition:.3s}
-.card:hover{transform:translateY(-5px);border-color:rgba(125,211,252,.24)}
-.card h3{font-size:19px;margin-bottom:6px}.muted{color:var(--muted)}
-.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.stat{padding:17px;border-radius:15px;background:#0a111d;border:1px solid var(--line)}.stat strong{display:block;font-size:24px}.stat span{font-size:12px;color:var(--muted)}
-.timeline{position:relative;margin-left:8px;border-left:1px solid #263850;padding-left:28px}.timeline-item{position:relative;margin-bottom:32px}.timeline-item:last-child{margin-bottom:0}
-.timeline-item:before{content:"";position:absolute;left:-35px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 5px #112139}
-.timeline-top{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.date{font-size:12px;color:#8db9dc;border:1px solid var(--line);padding:5px 9px;border-radius:999px}
-ul{padding-left:18px;color:var(--muted);margin-top:10px}li{margin:5px 0}
-.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}.skill-row{padding:18px;border:1px solid var(--line);border-radius:16px;background:#0a111c}.skill-head{display:flex;justify-content:space-between;font-size:14px;margin-bottom:9px}.bar{height:7px;border-radius:999px;background:#182231;overflow:hidden}.fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--violet))}
-.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}.tag{font-size:13px;color:#cbd5e1;border:1px solid var(--line);padding:8px 11px;border-radius:999px;background:#0b121e}
-.project{min-height:275px;display:flex;flex-direction:column;overflow:hidden;padding:0}.project-visual{height:125px;background:radial-gradient(circle at 30% 30%,rgba(56,189,248,.35),transparent 25%),linear-gradient(135deg,#101c31,#0b0f18);
-display:grid;place-items:center;border-bottom:1px solid var(--line)}.project-visual svg{width:58px;height:58px;stroke:#bdeaff}.project-body{padding:22px;display:flex;flex-direction:column;flex:1}.project-body p{color:var(--muted);font-size:14px}.project-foot{margin-top:auto;padding-top:18px;color:#8bc8f1;font-size:12px}
-.edu{display:flex;gap:15px}.icon{min-width:42px;height:42px;border-radius:12px;background:#102139;border:1px solid #233b5a;display:grid;place-items:center;color:#7dd3fc}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.contact-card{display:flex;align-items:center;gap:14px}.contact-card .icon{min-width:45px}.contact-card strong{display:block}.contact-card span{color:var(--muted);font-size:13px}
-.resume{display:grid;grid-template-columns:1fr .85fr;gap:25px;align-items:center}.resume-preview{height:330px;border-radius:18px;border:1px solid var(--line);overflow:hidden;background:#111}.resume-preview img{width:100%;height:100%;object-fit:cover;object-position:top}
-footer{padding:35px 0;color:#6f7e91;text-align:center;border-top:1px solid var(--line);font-size:13px}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
-#mobileMenu{display:none}
-@media(max-width:850px){
- .navlinks{display:none}.menu{display:block}.grid-hero{grid-template-columns:1fr}.hero{padding-top:120px}.profile-wrap{order:-1}
- .two,.three,.skill-grid,.contact-grid,.resume{grid-template-columns:1fr}.statgrid{grid-template-columns:1fr 1fr 1fr}.title{font-size:29px}
-}
-@media(max-width:520px){
- .hero{padding-top:105px}.avatar{height:250px}.hero-copy{font-size:16px}h1{letter-spacing:-2.5px}.statgrid{grid-template-columns:1fr}
- section{padding:70px 0}.card{padding:20px}
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070b14">
+  <meta name="description" content="Shahadab Sheikh — Electronics & Telecommunication Engineer portfolio. IoT, Embedded Systems, PCB Design, Robotics and Electronics Quality Control.">
+  <title>Shahadab Sheikh | Electronics & Telecommunication Engineer</title>
 
-/* ===== V3 Premium Portfolio Additions ===== */
-.type-cursor{display:inline-block;width:3px;height:1em;background:var(--blue);margin-left:4px;vertical-align:-2px;animation:blink .8s infinite}
-@keyframes blink{50%{opacity:0}}
-.particles{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
-.particle{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--blue);opacity:.35;animation:floatUp 20s linear infinite}
-@keyframes floatUp{from{transform:translateY(105vh)}to{transform:translateY(-10vh) translateX(70px)}}
-.section-nav{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 28px}.section-nav a{padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:#0a111d;color:#9fc7e8;font-size:12px}
-.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.detail-box{padding:16px;border:1px solid var(--line);border-radius:14px;background:#0a111c}.detail-box strong{display:block;margin-bottom:5px}.detail-box span{font-size:13px;color:var(--muted)}
-.cert-card{display:flex;flex-direction:column;height:100%}.cert-icon{height:105px;border-radius:15px;background:linear-gradient(135deg,#10213a,#0c1220);border:1px solid var(--line);display:grid;place-items:center;font-size:40px;margin-bottom:16px}.cert-actions{margin-top:auto;padding-top:18px}
-.small-btn,.social{display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#0b121e;font-size:12px;font-weight:800}
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.gallery-item{height:190px;border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative;background:#0b111b}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:.35s}.gallery-item:hover img{transform:scale(1.06)}.gallery-label{position:absolute;left:9px;bottom:9px;padding:5px 8px;border-radius:8px;background:#000b;font-size:11px}
-.modal{display:none;position:fixed;inset:0;z-index:300;background:#000b;backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-box{position:relative;width:min(900px,100%);max-height:90vh;overflow:auto;background:#0b111b;border:1px solid #263650;border-radius:22px;padding:30px}.modal-close{position:absolute;right:16px;top:14px;background:#111a29;color:#fff;border:1px solid var(--line);border-radius:9px;padding:7px 10px;cursor:pointer}.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:18px}.modal-box p,.modal-box li{color:var(--muted)}
-.project.clickable{cursor:pointer}.project.clickable:focus{outline:2px solid var(--blue);outline-offset:2px}
-.resume-actions,.social-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.contact-form{display:grid;gap:12px}.contact-form input,.contact-form textarea{width:100%;padding:13px 14px;border-radius:11px;border:1px solid var(--line);background:#080f1a;color:#fff;font:inherit;outline:none}.contact-form input:focus,.contact-form textarea:focus{border-color:#4d8bb8}.contact-form textarea{min-height:125px;resize:vertical}
-.availability{margin-top:14px;color:#a8d9bb;font-size:13px}.availability:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;margin-right:7px;box-shadow:0 0 12px #22c55e}
-@media(max-width:850px){.detail-grid,.modal-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.gallery-grid{grid-template-columns:1fr}}
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-</style>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            ink: '#070b14',
+            cyanx: '#22d3ee',
+            violetx: '#8b5cf6'
+          },
+          boxShadow: {
+            glow: '0 0 45px rgba(34,211,238,.12)',
+            violetglow: '0 0 55px rgba(139,92,246,.16)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root { color-scheme: dark; }
+    html.light { color-scheme: light; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(34,211,238,.10), transparent 25%),
+        radial-gradient(circle at 90% 15%, rgba(139,92,246,.12), transparent 28%),
+        #070b14;
+      color: #f8fafc;
+      overflow-x: hidden;
+    }
+    html.light body {
+      background:
+        radial-gradient(circle at 10% 10%, rgba(14,165,233,.10), transparent 25%),
+        radial-gradient(circle at 90% 15%, rgba(124,58,237,.08), transparent 28%),
+        #f7fbff;
+      color: #0f172a;
+    }
+    .glass {
+      background: rgba(15,23,42,.58);
+      border: 1px solid rgba(148,163,184,.14);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    html.light .glass {
+      background: rgba(255,255,255,.68);
+      border-color: rgba(15,23,42,.10);
+    }
+    .gradient-text {
+      background: linear-gradient(100deg,#fff 15%,#67e8f9 50%,#a78bfa 90%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    html.light .gradient-text {
+      background: linear-gradient(100deg,#0369a1,#7c3aed);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .gradient-border {
+      position: relative;
+      isolation: isolate;
+    }
+    .gradient-border::before {
+      content:"";
+      position:absolute;
+      inset:-1px;
+      border-radius:inherit;
+      padding:1px;
+      background:linear-gradient(135deg,#22d3ee,transparent 38%,#8b5cf6 72%,transparent);
+      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      z-index:-1;
+    }
+    .orb {
+      position:absolute;
+      width:360px;
+      height:360px;
+      border-radius:999px;
+      background:linear-gradient(135deg,rgba(34,211,238,.18),rgba(139,92,246,.18));
+      filter:blur(70px);
+      pointer-events:none;
+      animation:orb 9s ease-in-out infinite alternate;
+    }
+    @keyframes orb {
+      from { transform:translate3d(0,0,0) scale(1); }
+      to { transform:translate3d(30px,-20px,0) scale(1.12); }
+    }
+    .reveal {
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .75s ease,transform .75s ease;
+    }
+    .reveal.show { opacity:1; transform:none; }
+    .skill-fill { width:0; transition:width 1.3s cubic-bezier(.2,.8,.2,1); }
+    .project-card { transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease; }
+    .project-card:hover {
+      transform:translateY(-7px);
+      box-shadow:0 20px 60px rgba(0,0,0,.24);
+    }
+    .nav-active { color:#67e8f9 !important; }
+    html.light .nav-active { color:#0369a1 !important; }
+    .modal { opacity:0; pointer-events:none; transition:.25s ease; }
+    .modal.open { opacity:1; pointer-events:auto; }
+    .modal-panel { transform:translateY(18px) scale(.98); transition:.25s ease; }
+    .modal.open .modal-panel { transform:none; }
+    .toast { transform:translateY(15px); opacity:0; pointer-events:none; transition:.25s; }
+    .toast.show { transform:none; opacity:1; }
+    .progress-line {
+      position:fixed;left:0;top:0;height:3px;width:0;z-index:9999;
+      background:linear-gradient(90deg,#22d3ee,#8b5cf6,#22d3ee);
+    }
+    .grid-bg {
+      background-image:linear-gradient(rgba(148,163,184,.045) 1px,transparent 1px),
+                       linear-gradient(90deg,rgba(148,163,184,.045) 1px,transparent 1px);
+      background-size:42px 42px;
+      mask-image:linear-gradient(to bottom,black,transparent 85%);
+    }
+    html.light .grid-bg {
+      background-image:linear-gradient(rgba(15,23,42,.035) 1px,transparent 1px),
+                       linear-gradient(90deg,rgba(15,23,42,.035) 1px,transparent 1px);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+    }
+  </style>
 </head>
-<body>
-<div class="particles" aria-hidden="true">
-<span class="particle" style="left:7%;animation-duration:18s"></span>
-<span class="particle" style="left:23%;animation-duration:24s;animation-delay:2s"></span>
-<span class="particle" style="left:43%;animation-duration:20s;animation-delay:5s"></span>
-<span class="particle" style="left:65%;animation-duration:26s;animation-delay:1s"></span>
-<span class="particle" style="left:87%;animation-duration:21s;animation-delay:6s"></span>
-</div>
-<nav><div class="container nav">
-<a class="logo" href="#">Shahadab Sheikh<span>.</span></a>
-<div class="navlinks"><a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
-<button class="menu" onclick="toggleMenu()">☰</button>
-</div><div id="mobileMenu" style="display:none;padding:12px 4%;border-top:1px solid var(--line);background:#080d17">
-<a href="#about" onclick="toggleMenu()">About</a> · <a href="#experience" onclick="toggleMenu()">Experience</a> · <a href="#projects" onclick="toggleMenu()">Projects</a> · <a href="#contact" onclick="toggleMenu()">Contact</a>
-</div></nav>
 
-<header class="hero"><div class="container grid-hero reveal">
-<div>
-<div class="badge"><span class="dot"></span> Open to engineering opportunities</div>
-<h1>Electronics.<br><span class="gradient">Ideas into Reality.</span></h1>
-<p class="hero-copy">Hi, I'm <b>Shahadab Sheikh</b> — an Electronics & Telecommunication Engineering student passionate about <span id="typingText">IoT & Embedded Systems</span><span class="type-cursor"></span>, PCB design, robotics and practical electronics.</p>
-<div class="actions">
-<a class="btn primary" href="#projects">Explore My Work →</a>
-<a class="btn ghost" href="Shahadab_Sheikh_Resume.pdf" download>↓ Download Resume</a>
-</div>
-<div class="availability">Available for graduate / entry-level engineering opportunities</div><div class="hero-meta"><a class="meta"href="https://www.google.com/maps/search/?api=1&query=Ballarpur%2C%20Maharashtra%2C%20India"target="_blank"rel="noopener">📍 Ballarpur, Maharashtra</a><span class="meta">⚡ IoT & Embedded</span><span class="meta">🧩 PCB Design</span></div>
-</div>
-<div class="profile-wrap"><div class="profile-card">
-<div class="avatar">
-    <img src="profile.jpg" alt="Shahadab Sheikh">
-</div>
-<div class="profile-caption"><div><b>Shahadab Sheikh</b><br><small>Electronics & Telecommunication</small></div><small>2026</small></div>
-</div></div>
-</div></header>
+<body class="min-h-screen bg-ink text-slate-100 dark:text-slate-100">
+  <div id="progressLine" class="progress-line"></div>
+  <div class="fixed inset-0 -z-20 grid-bg pointer-events-none"></div>
 
-<section id="about"><div class="container reveal">
-<div class="eyebrow">01 · About</div><h2 class="title">Building with electronics, one system at a time.</h2><p class="subtitle">My work combines engineering fundamentals with hands-on experimentation in embedded hardware, IoT, robotics, PCB design and manufacturing quality.</p>
-<div class="cards two">
-<div class="card"><h3>Professional Summary</h3><p class="muted">Electronics & Telecommunication Engineering student with practical exposure to IoT, embedded systems, robotics and PCB design. Skilled in C/C++, Python, HTML/CSS and tools including MATLAB, Proteus, Wokwi and EasyEDA. Interested in building reliable, real-world electronic systems.</p>
-<div class="statgrid"><div class="stat"><strong>IoT</strong><span>Connected systems</span></div><div class="stat"><strong>PCB</strong><span>Design & fabrication</span></div><div class="stat"><strong>QC</strong><span>Testing mindset</span></div></div></div>
-<div class="card"><h3>Career Focus</h3><p class="muted">Target roles: Electronics Engineer, Embedded Engineer, IoT Engineer, PCB Design Engineer, Electronics Testing / Quality Engineer and Graduate Engineer Trainee.</p><div class="tags"><span class="tag">Embedded Systems</span><span class="tag">IoT</span><span class="tag">Electronics Testing</span><span class="tag">Robotics</span><span class="tag">PCB</span><span class="tag">Sensors</span></div></div>
-</div></div></section>
+  <!-- NAVBAR -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="mx-auto mt-3 w-[94%] max-w-7xl rounded-2xl glass shadow-glow">
+      <div class="px-4 sm:px-6 h-16 flex items-center justify-between">
+        <a href="#home" class="font-black tracking-tight text-lg sm:text-xl">
+          Shahadab<span class="text-cyan-300">.</span>
+        </a>
 
-<section id="experience"><div class="container reveal">
-<div class="eyebrow">02 · Experience</div><h2 class="title">Hands-on industry exposure.</h2><p class="subtitle">Experience across electronics manufacturing, PCB work, IoT and robotics.</p>
-<div class="timeline">
-<div class="timeline-item"><div class="timeline-top"><div><h3>Quality Control Intern — TrueView / Warner Electronics India Pvt. Ltd.</h3><p class="muted">Electronics Manufacturing · Production Testing</p></div><span class="date">Dec 2025 – Present</span></div><ul><li>Worked with production testing, FQC, IPQC and SMT-related quality processes.</li><li>Performed visual inspection, lens/dust checks, model verification and functional testing of camera products.</li><li>Worked with Wi-Fi and 4G camera testing workflows and internal testing applications.</li></ul></div>
-<div class="timeline-item"><div class="timeline-top"><div><h3>PCB Design & Fabrication Intern — VS Informatics Pvt. Ltd.</h3><p class="muted">Dual-Layer PCB Design</p></div><span class="date">Apr – May 2025</span></div><ul><li>Worked on dual-layer PCB design and fabrication workflow.</li><li>Gained practical exposure to circuit layout, design tools and electronics documentation.</li></ul></div>
-<div class="timeline-item"><div class="timeline-top"><div><h3>IoT & Robotics Intern — Maximum Solutions</h3><p class="muted">Microcontrollers & Sensors</p></div><span class="date">Jul – Aug 2022</span></div><ul><li>Developed IoT and robotics-based applications using microcontrollers and sensors.</li></ul></div>
-<div class="timeline-item"><div class="timeline-top"><div><h3>NGO Intern — Anmol Foundation</h3></div><span class="date">Feb 2022</span></div></div>
-</div></div></section>
+        <div id="desktopNav" class="hidden lg:flex items-center gap-6 text-sm text-slate-400">
+          <a href="#about" class="nav-link hover:text-white transition">About</a>
+          <a href="#experience" class="nav-link hover:text-white transition">Experience</a>
+          <a href="#skills" class="nav-link hover:text-white transition">Skills</a>
+          <a href="#projects" class="nav-link hover:text-white transition">Projects</a>
+          <a href="#certifications" class="nav-link hover:text-white transition">Achievements</a>
+          <a href="#contact" class="nav-link hover:text-white transition">Contact</a>
+        </div>
 
-<section id="education"><div class="container reveal">
-<div class="eyebrow">03 · Education</div><h2 class="title">Education & academic foundation.</h2>
-<div class="cards two">
-<div class="card edu"><div class="icon">🎓</div><div><h3>Bachelor of Technology</h3><p>Electronics & Telecommunication Engineering</p><p class="muted">G H Raisoni College of Engineering & Management, Nagpur</p><span class="date">Sep 2023 – Sep 2026</span></div></div>
-<div class="card edu"><div class="icon">⚙</div><div><h3>Diploma</h3><p>Electronics & Telecommunication · 75.29%</p><p class="muted">Somayya Polytechnic, Chandrapur</p><span class="date">Jul 2021 – Jul 2023</span></div></div>
-<div class="card edu"><div class="icon">📘</div><div><h3>HSC</h3><p>Guru Nanak College of Science, Ballarpur · 53%</p><span class="date">Jul 2017 – Aug 2021</span></div></div>
-<div class="card edu"><div class="icon">📗</div><div><h3>SSC</h3><p>Sai Baba Gyanpeeth Convent, Ballarpur</p><span class="date">Mar 2010 – May 2019</span></div></div>
-</div></div></section>
+        <div class="flex items-center gap-2">
+          <button id="themeBtn" class="h-10 w-10 rounded-xl glass grid place-items-center hover:scale-105 transition" aria-label="Toggle theme">
+            <i data-lucide="sun" class="w-4 h-4"></i>
+          </button>
+          <button id="mobileBtn" class="lg:hidden h-10 w-10 rounded-xl glass grid place-items-center" aria-label="Open menu">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
 
-<section id="projects"><div class="container reveal">
-<div class="eyebrow">04 · Projects</div><h2 class="title">Engineering projects I’m proud of.</h2><p class="subtitle">Academic projects focused on practical electronics, IoT, robotics and automation.</p>
-<div class="cards three">
-<button class="card project clickable" onclick="openProject('water')" aria-label="View details of Floating Water Surface Waste Collector Robot" style="text-align:left;color:inherit"><div class="project-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 16h18M5 16l2-7h10l2 7M8 9V6h8v3M6 19h2m8 0h2"/><circle cx="7" cy="16" r="2"/><circle cx="17" cy="16" r="2"/></svg></div><div class="project-body"><span class="eyebrow">Major B.Tech Project</span><h3>Floating Water Surface Waste Collector Robot</h3><p>Robotic system concept for collecting floating debris from water surfaces, combining mechanical collection with electronics and control.</p><div class="project-foot">Robotics · IoT · Embedded · Environmental Tech</div></div></div>
-<button class="card project clickable" onclick="openProject('notice')" aria-label="View details of Smart Notice Board" style="text-align:left;color:inherit"><div class="project-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M7 7h10M7 11h10M7 15h6"/></svg></div><div class="project-body"><span class="eyebrow">Minor B.Tech Project</span><h3>Smart Notice Board</h3><p>IoT-based digital notice board for wireless content updates and dynamic information display using an LED matrix.</p><div class="project-foot">ESP8266 · LED Matrix · Wi-Fi · IoT</div></div></div>
-<button class="card project clickable" onclick="openProject('robocar')" aria-label="View details of Remote-Controlled RoboCar" style="text-align:left;color:inherit"><div class="project-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/><path d="M4 17H2v-5h5l3-4h5l3 4h4v5h-2M10 8l-1-3h4l1 3"/></svg></div><div class="project-body"><span class="eyebrow">Diploma Final Project</span><h3>Remote-Controlled RoboCar</h3><p>Wireless robotic vehicle designed to explore motor control, embedded logic and remote movement.</p><div class="project-foot">Robotics · Embedded · Motor Control</div></div></div>
-</div></div></section>
+      <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-700/20 px-5 py-4">
+        <div class="grid gap-3 text-sm text-slate-400">
+          <a href="#about" class="mobile-link">About</a>
+          <a href="#experience" class="mobile-link">Experience</a>
+          <a href="#skills" class="mobile-link">Skills</a>
+          <a href="#projects" class="mobile-link">Projects</a>
+          <a href="#certifications" class="mobile-link">Achievements</a>
+          <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-<section id="skills"><div class="container reveal">
-<div class="eyebrow">05 · Skills</div><h2 class="title">Technical toolkit.</h2><p class="subtitle">A visual snapshot of my current technical strengths.</p>
-<div class="skill-grid">
-<div class="skill-row"><div class="skill-head"><span>Embedded Systems</span><b>85%</b></div><div class="bar"><div class="fill" style="width:85%"></div></div></div>
-<div class="skill-row"><div class="skill-head"><span>IoT & Sensors</span><b>88%</b></div><div class="bar"><div class="fill" style="width:88%"></div></div></div>
-<div class="skill-row"><div class="skill-head"><span>PCB Design</span><b>82%</b></div><div class="bar"><div class="fill" style="width:82%"></div></div></div>
-<div class="skill-row"><div class="skill-head"><span>C / C++</span><b>70%</b></div><div class="bar"><div class="fill" style="width:70%"></div></div></div>
-<div class="skill-row"><div class="skill-head"><span>Python</span><b>68%</b></div><div class="bar"><div class="fill" style="width:68%"></div></div></div>
-<div class="skill-row"><div class="skill-head"><span>MATLAB</span><b>72%</b></div><div class="bar"><div class="fill" style="width:72%"></div></div></div>
-</div>
-<div class="tags"><span class="tag">Proteus</span><span class="tag">EasyEDA</span><span class="tag">Wokwi</span><span class="tag">ThingSpeak</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Microcontrollers</span><span class="tag">Wi-Fi</span><span class="tag">Bluetooth</span><span class="tag">IPQC</span><span class="tag">FQC</span><span class="tag">Production Testing</span><span class="tag">Sensor Integration</span></div>
-</div></section>
+  <!-- HERO -->
+  <main>
+    <section id="home" class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
+      <div class="orb right-0 top-32"></div>
+      <div class="orb left-[-180px] bottom-[-100px] opacity-50"></div>
 
+      <div class="mx-auto w-[92%] max-w-7xl grid lg:grid-cols-[1.15fr_.85fr] gap-14 items-center">
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 px-3 py-2 rounded-full glass text-xs text-cyan-200 mb-6">
+            <span class="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_14px_#22c55e]"></span>
+            Open to engineering opportunities
+          </div>
 
-<section id="internship-details"><div class="container reveal">
-<div class="eyebrow">06 · Internship Details</div><h2 class="title">Industry work & responsibilities.</h2>
-<p class="subtitle">Detailed practical exposure from electronics manufacturing and quality control.</p>
-<div class="card">
-<h3>Quality Control Intern — TrueView / Warner Electronics India Pvt. Ltd.</h3>
-<p class="muted">Electronics Manufacturing · Production Testing · IPQC · FQC · SMT</p>
-<div class="detail-grid">
-<div class="detail-box"><strong>Production Testing</strong><span>Functional checks and product verification of camera units.</span></div>
-<div class="detail-box"><strong>IPQC</strong><span>In-process quality inspection during manufacturing.</span></div>
-<div class="detail-box"><strong>FQC</strong><span>Final quality inspection before product release.</span></div>
-<div class="detail-box"><strong>SMT</strong><span>Exposure to surface-mount manufacturing and quality workflow.</span></div>
-<div class="detail-box"><strong>Camera Testing</strong><span>Lens, dust, focus, mic, speaker, LEDs and model verification.</span></div>
-<div class="detail-box"><strong>Tools / Applications</strong><span>IPCProductCheck and internal production-testing workflows.</span></div>
-</div>
-</div></div></section>
+          <p class="text-cyan-300 text-sm font-bold tracking-[.25em] uppercase mb-4">Electronics & Telecommunication Engineer</p>
 
-<section id="certifications"><div class="container reveal">
-<div class="eyebrow">07 · Certifications</div><h2 class="title">Certificates & professional learning.</h2>
-<p class="subtitle">Upload the real certificate files using the filenames below to activate the buttons.</p>
-<div class="cards three">
-<div class="card cert-card"><div class="cert-icon">🏆</div><span class="eyebrow">Internship</span><h3>Quality Control Internship Certificate</h3><p class="muted">TrueView / Warner Electronics India Pvt. Ltd.</p><div class="cert-actions"><a class="small-btn" href="certificate-qc.pdf" target="_blank">View Certificate</a></div></div>
-<div class="card cert-card"><div class="cert-icon">📜</div><span class="eyebrow">NSDC</span><h3>Skill Development Certificate</h3><p class="muted">Add your verified NSDC certificate details.</p><div class="cert-actions"><a class="small-btn" href="certificate-nsdc.pdf" target="_blank">View Certificate</a></div></div>
-<div class="card cert-card"><div class="cert-icon">⚙️</div><span class="eyebrow">Technical Training</span><h3>Electronics / IoT Course</h3><p class="muted">Add your technical training certificate and issuer.</p><div class="cert-actions"><a class="small-btn" href="certificate-technical.pdf" target="_blank">View Certificate</a></div></div>
-</div></div></section>
+          <h1 class="text-5xl sm:text-6xl lg:text-8xl font-black leading-[.94] tracking-[-.06em]">
+            Electronics.<br>
+            <span class="gradient-text">Ideas into Reality.</span>
+          </h1>
 
-<section id="achievements"><div class="container reveal">
-<div class="eyebrow">08 · Achievements</div><h2 class="title">Achievements & highlights.</h2>
-<div class="cards three">
-<div class="card"><h3>Engineering Projects</h3><p class="muted">Built academic projects spanning IoT, robotics, embedded systems and electronics automation.</p></div>
-<div class="card"><h3>Research Interest</h3><p class="muted">Research work around IoT-based smart surveillance, wireless communication and practical electronics systems.</p></div>
-<div class="card"><h3>Industry Exposure</h3><p class="muted">Hands-on experience with production testing, IPQC, FQC, SMT and camera quality workflows.</p></div>
-</div></div></section>
+          <p class="mt-7 max-w-2xl text-base sm:text-lg text-slate-400 leading-8">
+            Hi, I'm <strong class="text-slate-100 dark:text-white">Shahadab Sheikh</strong>.
+            I build practical systems around
+            <span id="typingText" class="text-cyan-300 font-semibold"></span><span class="text-cyan-300">|</span>,
+            PCB design, robotics, testing and connected electronics.
+          </p>
 
-<section id="gallery"><div class="container reveal">
-<div class="eyebrow">09 · Project Gallery</div><h2 class="title">Builds, boards & engineering work.</h2>
-<p class="subtitle">Replace the placeholder filenames with your actual project and internship photographs.</p>
-<div class="gallery-grid">
-<div class="gallery-item"><img src="water-robot.jpg" alt="Floating Water Surface Waste Collector Robot"><span class="gallery-label">Water Waste Collector</span></div>
-<div class="gallery-item"><img src="smart-notice-board.jpg" alt="Smart Notice Board"><span class="gallery-label">Smart Notice Board</span></div>
-<div class="gallery-item"><img src="pcb.jpg" alt="PCB Design"><span class="gallery-label">PCB Design</span></div>
-<div class="gallery-item"><img src="camera-testing.jpg" alt="Camera Testing"><span class="gallery-label">Camera Testing</span></div>
-</div></div></section>
+          <div class="flex flex-wrap gap-3 mt-8">
+            <a href="#projects" class="px-5 py-3 rounded-xl bg-white text-slate-950 font-bold hover:-translate-y-1 transition shadow-lg">
+              View Projects <i data-lucide="arrow-up-right" class="inline w-4 h-4"></i>
+            </a>
+            <a href="Shahadab_Sheikh_Resume.pdf" download class="px-5 py-3 rounded-xl glass font-bold hover:-translate-y-1 transition">
+              Download Resume <i data-lucide="download" class="inline w-4 h-4"></i>
+            </a>
+            <a href="#contact" class="px-5 py-3 rounded-xl glass font-bold hover:-translate-y-1 transition">
+              Contact Me <i data-lucide="send" class="inline w-4 h-4"></i>
+            </a>
+          </div>
 
-<section><div class="container reveal"><div class="eyebrow">10 · Social</div><h2 class="title">Connect with me.</h2>
-<div class="social-row">
-<a class="social" href="https://github.com/SHahADAB17" target="_blank" rel="noopener">⌘ GitHub</a>
-<a class="social" href="https://www.linkedin.com/in/shahadab-sheikh-s1k7/" target="_blank" rel="noopener">in LinkedIn</a>
-<a class="social" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">💬 WhatsApp</a>
-<a class="social" href="#" target="_blank" rel="noopener">◎ Instagram</a>
-</div></div></section>
+          <div class="flex flex-wrap gap-3 mt-7">
+            <a href="https://github.com/SHahADAB17" target="_blank" rel="noopener" class="glass px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white transition">
+              <i data-lucide="github" class="inline w-4 h-4 mr-1"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/shahadab-sheikh-s1k7/" target="_blank" rel="noopener" class="glass px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white transition">
+              <i data-lucide="linkedin" class="inline w-4 h-4 mr-1"></i> LinkedIn
+            </a>
+            <a href="mailto:shahadabsheikh13@gmail.com" class="glass px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white transition">
+              <i data-lucide="mail" class="inline w-4 h-4 mr-1"></i> Email
+            </a>
+          </div>
+        </div>
 
-<section><div class="container reveal">
-<div class="resume"><div><div class="eyebrow">06 · Resume</div><h2 class="title">Take my profile with you.</h2><p class="subtitle">Download the resume version supplied for this portfolio. Replace the PDF later with your final ATS-optimized resume whenever you update it.</p><div class="resume-actions"><a class="btn primary" href="Shahadab_Sheikh_Resume.pdf" target="_blank">↗ View Resume</a><a class="btn ghost" href="Shahadab_Sheikh_Resume.pdf" download>↓ Download Resume</a></div></div>
-<div class="resume-preview"><img src="resume.jpg" alt="Shahadab Sheikh resume preview"></div></div>
-</div></section>
+        <div class="reveal flex justify-center">
+          <div class="relative w-full max-w-md">
+            <div class="absolute -inset-5 rounded-[2rem] bg-gradient-to-r from-cyan-400/10 via-violet-500/15 to-cyan-400/10 blur-2xl"></div>
+            <div class="relative gradient-border rounded-[2rem] glass p-4 shadow-violetglow">
+              <div class="aspect-[4/5] rounded-[1.4rem] overflow-hidden bg-gradient-to-br from-slate-800 to-slate-950 grid place-items-center">
+                <img src="profile.jpg" alt="Shahadab Sheikh" class="w-full h-full object-cover" onerror="this.style.display='none';document.getElementById('avatarFallback').classList.remove('hidden')">
+                <div id="avatarFallback" class="hidden text-center p-10">
+                  <div class="mx-auto w-28 h-28 rounded-full bg-gradient-to-br from-cyan-400 to-violet-500 grid place-items-center text-4xl font-black">SS</div>
+                  <p class="mt-5 text-slate-300">Add <b>profile.jpg</b> beside index.html</p>
+                </div>
+              </div>
+              <div class="flex justify-between items-end gap-4 px-2 pt-4 pb-1">
+                <div>
+                  <h2 class="font-bold text-lg">Shahadab Sheikh</h2>
+                  <p class="text-sm text-slate-400">Electronics & Telecommunication</p>
+                </div>
+                <span class="text-xs text-cyan-300">2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="contact"><div class="container reveal">
-<div class="eyebrow">07 · Contact</div><h2 class="title">Let’s build something useful.</h2><p class="subtitle">For internships, graduate roles, electronics projects or collaboration, you can reach me here.</p>
-<div class="contact-grid">
-<a class="card contact-card" href="mailto:shahadabsheikh13@gmail.com"><div class="icon">✉</div><div><strong>Email</strong><span>shahadabsheikh13@gmail.com</span></div></a>
-<a class="card contact-card" href="https://www.linkedin.com/in/shahadab-sheikh-s1k7/" target="_blank" rel="noopener"><div class="icon">in</div><div><strong>LinkedIn</strong><span>Shahadab Sheikh</span></div></a>
-<a class="card contact-card" href="https://github.com/SHahADAB17" target="_blank" rel="noopener"><div class="icon">⌘</div><div><strong>GitHub</strong><span>SHahADAB17</span></div></a>
-<a class="card contact-card"href="https://www.google.com/maps/search/?api=1&query=Ballarpur%2C%20Maharashtra%2C%20India"target="_blank"rel="noopener"><div class="icon">📍</div><div><strong>Location</strong><span>Ballarpur, Maharashtra, India</span></div></a>
-</div>
-<div class="card" style="margin-top:18px">
-<h3>Send me a message</h3><p class="muted">The form opens your email app with the message prepared.</p>
-<form class="contact-form" onsubmit="sendMessage(event)">
-<input id="contactName" type="text" placeholder="Your name" required>
-<input id="contactEmail" type="email" placeholder="Your email" required>
-<textarea id="contactMessage" placeholder="Your message" required></textarea>
-<button class="btn primary" type="submit">✉ Send Message</button>
-</form>
-</div>
-</div></section>
+    <!-- QUICK STATS -->
+    <section class="py-10 border-y border-slate-700/15">
+      <div class="mx-auto w-[92%] max-w-7xl grid grid-cols-2 md:grid-cols-4 gap-3 reveal">
+        <div class="glass rounded-2xl p-5"><strong class="counter text-3xl font-black" data-target="5">0+</strong><p class="text-xs text-slate-400 mt-1">Experiences / training</p></div>
+        <div class="glass rounded-2xl p-5"><strong class="counter text-3xl font-black" data-target="4">0+</strong><p class="text-xs text-slate-400 mt-1">Featured projects</p></div>
+        <div class="glass rounded-2xl p-5"><strong class="counter text-3xl font-black" data-target="10">0+</strong><p class="text-xs text-slate-400 mt-1">Technical focus areas</p></div>
+        <div class="glass rounded-2xl p-5"><strong class="counter text-3xl font-black" data-target="7.88">0</strong><p class="text-xs text-slate-400 mt-1">Academic CGPA / profile metric</p></div>
+      </div>
+    </section>
 
+    <!-- ABOUT -->
+    <section id="about" class="py-24">
+      <div class="mx-auto w-[92%] max-w-7xl">
+        <div class="reveal mb-10">
+          <p class="text-cyan-300 text-xs font-black tracking-[.25em] uppercase">01 · About Me</p>
+          <h2 class="text-4xl sm:text-5xl font-black mt-2 tracking-tight">Engineering with a practical mindset.</h2>
+          <p class="text-slate-400 max-w-3xl mt-4 leading-7">
+            Electronics & Telecommunication Engineering student with hands-on exposure to IoT, embedded systems,
+            robotics, PCB design and electronics manufacturing quality control.
+          </p>
+        </div>
 
-<div id="projectModal" class="modal" onclick="closeProject(event)">
-<div class="modal-box" onclick="event.stopPropagation()">
-<button class="modal-close" onclick="closeProject()">✕</button>
-<div id="modalContent"></div>
-</div></div>
+        <div class="grid lg:grid-cols-2 gap-5">
+          <article class="glass rounded-3xl p-7 reveal">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="h-11 w-11 rounded-xl bg-cyan-400/10 grid place-items-center text-cyan-300"><i data-lucide="target"></i></div>
+              <h3 class="text-xl font-bold">Vision & Focus</h3>
+            </div>
+            <p class="text-slate-400 leading-7">
+              My goal is to combine electronics fundamentals, software and manufacturing knowledge to build
+              reliable real-world systems that solve practical problems.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-6">
+              <span class="px-3 py-2 rounded-full glass text-xs">IoT</span>
+              <span class="px-3 py-2 rounded-full glass text-xs">Embedded</span>
+              <span class="px-3 py-2 rounded-full glass text-xs">PCB</span>
+              <span class="px-3 py-2 rounded-full glass text-xs">Robotics</span>
+              <span class="px-3 py-2 rounded-full glass text-xs">Quality Control</span>
+            </div>
+          </article>
 
-<footer>© 2026 Shahadab Sheikh · Electronics & Telecommunication Engineering · Built with HTML, CSS & JavaScript</footer>
+          <article class="glass rounded-3xl p-7 reveal">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="h-11 w-11 rounded-xl bg-violet-400/10 grid place-items-center text-violet-300"><i data-lucide="sparkles"></i></div>
+              <h3 class="text-xl font-bold">Key Highlights</h3>
+            </div>
+            <ul class="space-y-4 text-slate-400">
+              <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 text-cyan-300 shrink-0"></i>Production testing, IPQC, FQC and SMT exposure.</li>
+              <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 text-cyan-300 shrink-0"></i>Dual-layer PCB design and fabrication workflow exposure.</li>
+              <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 text-cyan-300 shrink-0"></i>IoT, wireless communication and robotics projects.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <!-- EXPERIENCE / EDUCATION TIMELINE -->
+    <section id="experience" class="py-24 border-y border-slate-700/15">
+      <div class="mx-auto w-[92%] max-w-7xl">
+        <div class="reveal mb-12">
+          <p class="text-cyan-300 text-xs font-black tracking-[.25em] uppercase">02 · Journey</p>
+          <h2 class="text-4xl sm:text-5xl font-black mt-2">Experience & Education Timeline.</h2>
+        </div>
 
-<script>
-function toggleMenu(){const m=document.getElementById('mobileMenu');m.style.display=m.style.display==='block'?'none':'block'}
-const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.08});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+        <div class="relative max-w-4xl ml-2 sm:ml-8 border-l border-slate-700/40">
+          <div class="timeline-item relative pl-8 sm:pl-10 pb-10 reveal">
+            <span class="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-cyan-300 shadow-[0_0_20px_#22d3ee]"></span>
+            <div class="glass rounded-2xl p-6">
+              <div class="flex flex-wrap justify-between gap-3">
+                <div><h3 class="font-bold text-lg">Quality Control Intern</h3><p class="text-cyan-300 text-sm">TrueView / Warner Electronics India Pvt. Ltd.</p></div>
+                <span class="text-xs px-3 py-1 rounded-full glass h-fit">Dec 2025 – Present</span>
+              </div>
+              <p class="text-slate-400 text-sm mt-4">Production Testing · IPQC · FQC · SMT · Camera Quality Testing</p>
+            </div>
+          </div>
 
-const roles=["IoT & Embedded Systems","PCB Design","Electronics Testing","Robotics & Automation","Wireless Communication"];
-let ri=0,ci=0,del=false;
-function typeRole(){const e=document.getElementById("typingText");if(!e)return;const w=roles[ri];ci+=del?-1:1;e.textContent=w.slice(0,ci);if(!del&&ci===w.length){del=true;return setTimeout(typeRole,1100)}if(del&&ci===0){del=false;ri=(ri+1)%roles.length}setTimeout(typeRole,del?45:75)} typeRole();
+          <div class="timeline-item relative pl-8 sm:pl-10 pb-10 reveal">
+            <span class="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-violet-400"></span>
+            <div class="glass rounded-2xl p-6">
+              <div class="flex flex-wrap justify-between gap-3">
+                <div><h3 class="font-bold text-lg">PCB Design & Fabrication Intern</h3><p class="text-violet-300 text-sm">VS Informatics Pvt. Ltd.</p></div>
+                <span class="text-xs px-3 py-1 rounded-full glass h-fit">Apr – May 2025</span>
+              </div>
+              <p class="text-slate-400 text-sm mt-4">Dual-layer PCB design, layout and fabrication workflow.</p>
+            </div>
+          </div>
 
-const projects={
-water:{title:"Floating Water Surface Waste Collector Robot",tag:"Major B.Tech Project",overview:"A robotic system concept for collecting floating debris from water surfaces by combining a floating platform, collection mechanism, electronics and control.",problem:"Floating plastic and debris can be difficult and time-consuming to collect manually.",tech:"Embedded Systems · Motors · Sensors · IoT · Robotics",role:"System concept, electronics integration, control logic and project documentation.",features:["Floating platform","Waste collection mechanism","Remote/automated control","Sensor integration","Environmental cleanup"],img:"water-robot.jpg"},
-notice:{title:"Smart Notice Board",tag:"Minor B.Tech Project",overview:"IoT-based digital notice board for wireless content updates and dynamic LED-matrix information display.",problem:"Traditional notice boards require repeated manual replacement of information.",tech:"ESP8266 · LED Matrix · Wi-Fi · IoT",role:"Firmware, display logic, wireless communication and interface planning.",features:["Wireless updates","Dynamic display","Remote content management","LED matrix","IoT connectivity"],img:"smart-notice-board.jpg"},
-robocar:{title:"Remote-Controlled RoboCar",tag:"Diploma Final Project",overview:"Wireless robotic vehicle developed to explore motor control, embedded logic and remote movement.",problem:"Create a simple mobile robot with reliable remote directional control.",tech:"Microcontroller · Motor Driver · DC Motors · Wireless Control",role:"Circuit integration, motor control, assembly and testing.",features:["Forward/reverse movement","Left/right steering","Wireless control","Motor driver interface"],img:"robocar.jpg"}};
+          <div class="timeline-item relative pl-8 sm:pl-10 pb-10 reveal">
+            <span class="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-cyan-300"></span>
+            <div class="glass rounded-2xl p-6">
+              <div class="flex flex-wrap justify-between gap-3">
+                <div><h3 class="font-bold text-lg">B.Tech — Electronics & Telecommunication</h3><p class="text-cyan-300 text-sm">G H Raisoni College of Engineering & Management, Nagpur</p></div>
+                <span class="text-xs px-3 py-1 rounded-full glass h-fit">2023 – 2026</span>
+              </div>
+              <p class="text-slate-400 text-sm mt-4">Academic foundation in electronics, communication, embedded systems and engineering.</p>
+            </div>
+          </div>
 
-function openProject(k){const p=projects[k];document.getElementById("modalContent").innerHTML=
-`<span class="eyebrow">${p.tag}</span><h2 class="title">${p.title}</h2>
-<div class="modal-grid"><div>
-<h3>Project Overview</h3><p>${p.overview}</p>
-<h3>Problem Statement</h3><p>${p.problem}</p>
-<h3>Technologies</h3><p>${p.tech}</p>
-<h3>Your Role</h3><p>${p.role}</p></div>
-<div><img src="${p.img}" onerror="this.style.display='none'" alt="${p.title}" style="width:100%;height:220px;object-fit:cover;border-radius:15px;border:1px solid var(--line)">
-<h3>Key Features</h3><ul>${p.features.map(x=>`<li>${x}</li>`).join("")}</ul>
-<h3>Result</h3><p>Add your final test results, measurements or demonstration video here.</p>
-<div class="resume-actions"><a class="btn ghost" href="https://github.com/SHahADAB17" target="_blank" rel="noopener">⌘ GitHub</a></div>
-</div></div>`;
-document.getElementById("projectModal").classList.add("show");document.body.style.overflow="hidden"}
-function closeProject(e){if(e&&e.target!==document.getElementById("projectModal"))return;document.getElementById("projectModal").classList.remove("show");document.body.style.overflow=""}
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeProject({target:document.getElementById("projectModal")})});
-function sendMessage(e){e.preventDefault();const n=document.getElementById("contactName").value,em=document.getElementById("contactEmail").value,m=document.getElementById("contactMessage").value;location.href="mailto:shahadabsheikh13@gmail.com?subject="+encodeURIComponent("Portfolio Contact from "+n)+"&body="+encodeURIComponent("Name: "+n+"\nEmail: "+em+"\n\n"+m)}
-</script>
+          <div class="timeline-item relative pl-8 sm:pl-10 reveal">
+            <span class="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-violet-400"></span>
+            <div class="glass rounded-2xl p-6">
+              <div class="flex flex-wrap justify-between gap-3">
+                <div><h3 class="font-bold text-lg">Diploma — Electronics & Telecommunication</h3><p class="text-violet-300 text-sm">Somayya Polytechnic, Chandrapur</p></div>
+                <span class="text-xs px-3 py-1 rounded-full glass h-fit">2021 – 2023</span>
+              </div>
+              <p class="text-slate-400 text-sm mt-4">75.29% · Electronics fundamentals, circuits and practical project work.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-24">
+      <div class="mx-auto w-[92%] max-w-7xl">
+        <div class="reveal mb-12">
+          <p class="text-cyan-300 text-xs font-black tracking-[.25em] uppercase">03 · Skills</p>
+          <h2 class="text-4xl sm:text-5xl font-black mt-2">Technical toolkit.</h2>
+          <p class="text-slate-400 mt-4 max-w-2xl">Interactive skill indicators based on the current portfolio profile.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-5">
+          <div class="glass rounded-3xl p-7 reveal">
+            <h3 class="font-bold text-lg mb-6">Core Engineering</h3>
+            <div class="space-y-5">
+              <div class="skill" data-value="85"><div class="flex justify-between text-sm mb-2"><span>Embedded Systems</span><b>85%</b></div><div class="h-2 rounded-full bg-slate-800 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-cyan-400 to-violet-500"></div></div></div>
+              <div class="skill" data-value="88"><div class="flex justify-between text-sm mb-2"><span>IoT & Sensors</span><b>88%</b></div><div class="h-2 rounded-full bg-slate-800 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-cyan-400 to-violet-500"></div></div></div>
+              <div class="skill" data-value="82"><div class="flex justify-between text-sm mb-2"><span>PCB Design</span><b>82%</b></div><div class="h-2 rounded-full bg-slate-800 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-cyan-400 to-violet-500"></div></div></div>
+              <div class="skill" data-value="72"><div class="flex justify-between text-sm mb-2"><span>MATLAB</span><b>72%</b></div><div class="h-2 rounded-full bg-slate-800 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-cyan-400 to-violet-500"></div></div></div>
+            </div>
+          </div>
+
+          <div class="glass rounded-3xl p-7 reveal">
+            <h3 class="font-bold text-lg mb-6">Tech Stack</h3>
+            <div class="space-y-6">
+              <div><p class="text-xs uppercase tracking-widest text-cyan-300 font-bold mb-3">Languages</p><div class="flex flex-wrap gap-2"><span class="glass px-3 py-2 rounded-xl text-sm">C/C++</span><span class="glass px-3 py-2 rounded-xl text-sm">Python</span><span class="glass px-3 py-2 rounded-xl text-sm">HTML5</span><span class="glass px-3 py-2 rounded-xl text-sm">CSS3</span></div></div>
+              <div><p class="text-xs uppercase tracking-widest text-violet-300 font-bold mb-3">Tools</p><div class="flex flex-wrap gap-2"><span class="glass px-3 py-2 rounded-xl text-sm">MATLAB</span><span class="glass px-3 py-2 rounded-xl text-sm">Proteus</span><span class="glass px-3 py-2 rounded-xl text-sm">EasyEDA</span><span class="glass px-3 py-2 rounded-xl text-sm">Wokwi</span></div></div>
+              <div><p class="text-xs uppercase tracking-widest text-cyan-300 font-bold mb-3">Platforms / Domains</p><div class="flex flex-wrap gap-2"><span class="glass px-3 py-2 rounded-xl text-sm">ThingSpeak</span><span class="glass px-3 py-2 rounded-xl text-sm">Wi-Fi</span><span class="glass px-3 py-2 rounded-xl text-sm">Bluetooth</span><span class="glass px-3 py-2 rounded-xl text-sm">IPQC</span><span class="glass px-3 py-2 rounded-xl text-sm">FQC</span><span class="glass px-3 py-2 rounded-xl text-sm">SMT</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-24 border-y border-slate-700/15">
+      <div class="mx-auto w-[92%] max-w-7xl">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 reveal">
+          <div>
+            <p class="text-cyan-300 text-xs font-black tracking-[.25em] uppercase">04 · Projects</p>
+            <h2 class="text-4xl sm:text-5xl font-black mt-2">Selected engineering work.</h2>
+          </div>
+          <div class="flex flex-wrap gap-2" id="projectFilters">
+            <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full glass text-sm">All</button>
+            <button data-filter="web" class="filter-btn px-4 py-2 rounded-full glass text-sm">Web</button>
+            <button data-filter="software" class="filter-btn px-4 py-2 rounded-full glass text-sm">Software</button>
+            <button data-filter="ui" class="filter-btn px-4 py-2 rounded-full glass text-sm">UI</button>
+            <button data-filter="iot" class="filter-btn px-4 py-2 rounded-full glass text-sm">IoT</button>
+            <button data-filter="robotics" class="filter-btn px-4 py-2 rounded-full glass text-sm">Robotics</button>
+          </div>
+        </div>
+
+        <div id="projectGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <article class="project-card glass rounded-3xl overflow-hidden reveal" data-category="iot robotics" data-project="water">
+            <div class="h-44 bg-gradient-to-br from-cyan-400/15 via-slate-900 to-violet-500/15 grid place-items-center">
+              <i data-lucide="waves" class="w-14 h-14 text-cyan-300"></i>
+            </div>
+            <div class="p-6">
+              <span class="text-xs text-cyan-300 font-bold uppercase tracking-widest">Major B.Tech Project</span>
+              <h3 class="text-xl font-bold mt-2">Floating Water Surface Waste Collector Robot</h3>
+              <p class="text-slate-400 text-sm leading-6 mt-3">Robotic system concept for collecting floating debris using a floating platform, collection mechanism, electronics and control.</p>
+              <div class="flex flex-wrap gap-2 mt-4"><span class="text-xs glass px-2 py-1 rounded-lg">Robotics</span><span class="text-xs glass px-2 py-1 rounded-lg">IoT</span><span class="text-xs glass px-2 py-1 rounded-lg">Embedded</span></div>
+              <div class="flex gap-2 mt-6"><button class="details-btn flex-1 px-3 py-2 rounded-xl bg-white text-slate-950 text-sm font-bold" data-project="water">View Details</button><a href="https://github.com/SHahADAB17" target="_blank" class="px-3 py-2 rounded-xl glass text-sm">GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="project-card glass rounded-3xl overflow-hidden reveal" data-category="iot software web" data-project="notice">
+            <div class="h-44 bg-gradient-to-br from-violet-400/15 via-slate-900 to-cyan-500/15 grid place-items-center">
+              <i data-lucide="monitor-smartphone" class="w-14 h-14 text-violet-300"></i>
+            </div>
+            <div class="p-6">
+              <span class="text-xs text-violet-300 font-bold uppercase tracking-widest">Minor B.Tech Project</span>
+              <h3 class="text-xl font-bold mt-2">Smart Notice Board</h3>
+              <p class="text-slate-400 text-sm leading-6 mt-3">IoT-based digital notice board for wireless content updates and dynamic LED-matrix information display.</p>
+              <div class="flex flex-wrap gap-2 mt-4"><span class="text-xs glass px-2 py-1 rounded-lg">ESP8266</span><span class="text-xs glass px-2 py-1 rounded-lg">LED Matrix</span><span class="text-xs glass px-2 py-1 rounded-lg">Wi-Fi</span></div>
+              <div class="flex gap-2 mt-6"><button class="details-btn flex-1 px-3 py-2 rounded-xl bg-white text-slate-950 text-sm font-bold" data-project="notice">View Details</button><a href="https://github.com/SHahADAB17" target="_blank" class="px-3 py-2 rounded-xl glass text-sm">GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="project-card glass rounded-3xl overflow-hidden reveal" data-category="software robotics" data-project="robocar">
+            <div class="h-44 bg-gradient-to-br from-cyan-400/15 via-slate-900 to-violet-500/15 grid place-items-center">
+              <i data-lucide="bot" class="w-14 h-14 text-cyan-300"></i>
+            </div>
+            <div class="p-6">
+              <span class="text-xs text-cyan-300 font-bold uppercase tracking-widest">Diploma Final Project</span>
+              <h3 class="text-xl font-bold mt-2">Remote-Controlled RoboCar</h3>
+              <p class="text-slate-400 text-sm leading-6 mt-3">Wireless robotic vehicle exploring motor control, embedded logic and remote directional movement.</p>
+              <div class="flex flex-wrap gap-2 mt-4"><span class="text-xs glass px-2 py-1 rounded-lg">Microcontroller</span><span class="text-xs glass px-2 py-1 rounded-lg">Motor Driver</span><span class="text-xs glass px-2 py-1 rounded-lg">Wireless</span></div>
+              <div class="flex gap-2 mt-6"><button class="details-btn flex-1 px-3 py-2 rounded-xl bg-white text-slate-950 text-sm font-bold" data-project="robocar">View Details</button><a href="https://github.com/SHahADAB17" target="_blank" class="px-3 py-2 rounded-xl glass text-sm">GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="project-card glass rounded-3xl overflow-hidden reveal" data-category="ui web" data-project="portfolio">
+            <div class="h-44 bg-gradient-to-br from-violet-400/15 via-slate-900 to-cyan-500/15 grid place-items-center">
+              <i data-lucide="layout-dashboard" class="w-14 h-14 text-violet-300"></i>
+            </div>
+            <div class="p-6">
+              <span class="text-xs text-violet-300 font-bold uppercase tracking-widest">Personal Portfolio</span>
+              <h3 class="text-xl font-bold mt-2">Interactive Engineering Portfolio</h3>
+              <p class="text-slate-400 text-sm leading-6 mt-3">Responsive single-page portfolio with glassmorphism, theme switching, animations and interactive project modals.</p>
+              <div class="flex flex-wrap gap-2 mt-4"><span class="text-xs glass px-2 py-1 rounded-lg">HTML</span><span class="text-xs glass px-2 py-1 rounded-lg">Tailwind</span><span class="text-xs glass px-2 py-1 rounded-lg">JavaScript</span></div>
+              <div class="flex gap-2 mt-6"><button class="details-btn flex-1 px-3 py-2 rounded-xl bg-white text-slate-950 text-sm font-bold" data-project="portfolio">View Details</button><a href="https://github.com/SHahADAB17" target="_blank" class="px-3 py-2 rounded-xl glass text-sm">GitHub</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="py-24">
+      <div class="mx-auto w-[92%] max-w-7xl">
+        <div class="reveal mb-10">
+          <p class="text-cyan-300 text-xs font-black tracking-[.25em] uppercase">05 · Certifications</p>
+          <h2 class="text-4xl sm:text-5xl font-black mt-2">Certificates & achievements.</h2>
+          <p class="text-slate-400 mt-4">Replace the placeholder certificate files with your verified documents.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <article class="glass rounded-3xl p-6 reveal">
+            <div class="h-28 rounded-2xl bg-gradient-to-br from-cyan-400/15 to-violet-500/15 grid place-items-center"><i data-lucide="award" class="w-12 h-12 text-cyan-300"></i></div>
+            <p class="text-xs text-cyan-300 font-bold uppercase tracking-widest mt-5">Internship</p>
+            <h3 class="text-xl font-bold mt-2">Quality Control Internship</h3>
+            <p class="text-slate-400 text-sm mt-2">TrueView / Warner Electronics India Pvt. Ltd.</p>
+            <button class="cert-btn mt-5 px-4 py-2 rounded-xl glass text-sm font-bold" data-title="Quality Control Internship Certificate" data-file="certificate-qc.pdf">Preview Certificate</button>
+          </article>
+
+          <article class="glass rounded-3xl p-6 reveal">
+            <div class="h-28 rounded-2xl bg-gradient-to-br from-violet-400/15 to-cyan-500/15 grid place-items-center"><i data-lucide="scroll-text" class="w-12 h-12 text-violet-300"></i></div>
+            <p class="text-xs text-violet-300 font-bold uppercase tracking-widest mt-5">NSDC</p>
+            <h3 class="text-xl font-bold mt-2">Skill Development Certificate</h3>
+            <p class="text-slate-400 text-sm mt-2">Add the verified NSDC course / certificate details.</p>
+            <button class="cert-btn mt-5 px-4 py-2 rounded-xl glass text-sm font-bold" data-title="NSDC Skill Development Certificate" data-file="certificate-nsdc.pdf">Preview Certificate</button>
+          </article>
+
+          <article class="glass rounded-3xl p-6 reveal">
+            <div class="h-28 rounded-2xl bg-gradient-to-br from-cyan-400/15 to-violet-500/15 grid place-items-center"><i data-lucide="badge-check" class="w-12 h-12 text-cyan-300"></i></div>
+            <p class="text-xs text-cyan-300 font-bold uppercase tracking-widest mt-5">Technical Training</p>
+            <h3 class="text-xl font-bold mt-2">Electronics / IoT Training</h3>
+            <p class="text-slate-400 text-sm mt-2">Add the verified training certificate and issuer.</p>
+            <button class="cert-btn mt-5 px-4 py-2 rounded-xl glass text-sm font-bold" data-title="Technical Training Certificate" data-file="certificate-technical.pdf">Preview Certificate</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 border-t border-slate-700/15">
+      <div class="mx-auto w-[92%] max-w-7xl">
+        <div class="reveal mb-10">
+          <p class="text-cyan-300 text-xs font-black tracking-[.25em] uppercase">06 · Contact</p>
+          <h2 class="text-4xl sm:text-5xl font-black mt-2">Let's build something useful.</h2>
+          <p class="text-slate-400 mt-4 max-w-2xl">For internships, graduate roles, electronics projects or collaboration, send a message.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-5">
+          <div class="space-y-4 reveal">
+            <a href="mailto:shahadabsheikh13@gmail.com" class="glass rounded-2xl p-5 flex items-center gap-4 hover:-translate-y-1 transition">
+              <span class="h-11 w-11 rounded-xl bg-cyan-400/10 text-cyan-300 grid place-items-center"><i data-lucide="mail"></i></span>
+              <span><b class="block">Email</b><small class="text-slate-400">shahadabsheikh13@gmail.com</small></span>
+            </a>
+            <a href="https://www.linkedin.com/in/shahadab-sheikh-s1k7/" target="_blank" rel="noopener" class="glass rounded-2xl p-5 flex items-center gap-4 hover:-translate-y-1 transition">
+              <span class="h-11 w-11 rounded-xl bg-violet-400/10 text-violet-300 grid place-items-center"><i data-lucide="linkedin"></i></span>
+              <span><b class="block">LinkedIn</b><small class="text-slate-400">Shahadab Sheikh</small></span>
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Ballarpur%2C%20Maharashtra%2C%20India" target="_blank" rel="noopener" class="glass rounded-2xl p-5 flex items-center gap-4 hover:-translate-y-1 transition">
+              <span class="h-11 w-11 rounded-xl bg-cyan-400/10 text-cyan-300 grid place-items-center"><i data-lucide="map-pin"></i></span>
+              <span><b class="block">Location</b><small class="text-slate-400">Ballarpur, Maharashtra, India</small></span>
+            </a>
+          </div>
+
+          <form id="contactForm" class="glass rounded-3xl p-6 sm:p-8 reveal">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div><label class="text-xs text-slate-400">Name</label><input id="name" required type="text" class="mt-2 w-full rounded-xl bg-slate-950/50 border border-slate-700/40 px-4 py-3 outline-none focus:border-cyan-400" placeholder="Your name"></div>
+              <div><label class="text-xs text-slate-400">Email</label><input id="email" required type="email" class="mt-2 w-full rounded-xl bg-slate-950/50 border border-slate-700/40 px-4 py-3 outline-none focus:border-cyan-400" placeholder="you@example.com"></div>
+            </div>
+            <div class="mt-4"><label class="text-xs text-slate-400">Subject</label><input id="subject" required type="text" class="mt-2 w-full rounded-xl bg-slate-950/50 border border-slate-700/40 px-4 py-3 outline-none focus:border-cyan-400" placeholder="Project / Job opportunity"></div>
+            <div class="mt-4"><label class="text-xs text-slate-400">Message</label><textarea id="message" required rows="6" class="mt-2 w-full rounded-xl bg-slate-950/50 border border-slate-700/40 px-4 py-3 outline-none focus:border-cyan-400 resize-y" placeholder="Write your message..."></textarea></div>
+            <button class="mt-5 w-full sm:w-auto px-5 py-3 rounded-xl bg-white text-slate-950 font-black hover:-translate-y-1 transition" type="submit">
+              Send Message <i data-lucide="send" class="inline w-4 h-4"></i>
+            </button>
+            <p class="text-xs text-slate-500 mt-3">The form opens your email app with the message prepared.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PROJECT MODAL -->
+  <div id="projectModal" class="modal fixed inset-0 z-[100] bg-black/75 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="modal-panel w-full max-w-3xl max-h-[90vh] overflow-auto glass rounded-3xl p-6 sm:p-8">
+      <div class="flex justify-between items-start gap-4">
+        <div><p id="modalTag" class="text-xs text-cyan-300 font-bold uppercase tracking-widest"></p><h2 id="modalTitle" class="text-3xl font-black mt-2"></h2></div>
+        <button id="modalClose" class="h-10 w-10 rounded-xl glass grid place-items-center"><i data-lucide="x"></i></button>
+      </div>
+      <div id="modalBody" class="mt-6 text-slate-400 leading-7"></div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATE MODAL -->
+  <div id="certModal" class="modal fixed inset-0 z-[110] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="modal-panel w-full max-w-4xl glass rounded-3xl p-6">
+      <div class="flex justify-between items-center gap-4 mb-5">
+        <h2 id="certTitle" class="text-xl font-bold"></h2>
+        <button id="certClose" class="h-10 w-10 rounded-xl glass grid place-items-center"><i data-lucide="x"></i></button>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-slate-700/30 bg-slate-950 min-h-[320px] grid place-items-center">
+        <iframe id="certFrame" class="w-full h-[65vh]" title="Certificate preview"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] glass rounded-xl px-5 py-3 text-sm"></div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-700/15 py-10">
+    <div class="mx-auto w-[92%] max-w-7xl flex flex-col md:flex-row justify-between gap-5 items-center">
+      <p class="text-sm text-slate-500">© <span id="year"></span> Shahadab Sheikh · Electronics & Telecommunication Engineering</p>
+      <div class="flex gap-5 text-sm text-slate-500">
+        <a href="#home" class="hover:text-cyan-300">Home</a>
+        <a href="#projects" class="hover:text-cyan-300">Projects</a>
+        <a href="#contact" class="hover:text-cyan-300">Contact</a>
+        <a href="https://github.com/SHahADAB17" target="_blank" rel="noopener" class="hover:text-cyan-300">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Theme
+    const html = document.documentElement;
+    const themeBtn = document.getElementById('themeBtn');
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    if (savedTheme === 'light') html.classList.add('light');
+
+    function updateThemeIcon() {
+      themeBtn.innerHTML = html.classList.contains('light')
+        ? '<i data-lucide="moon" class="w-4 h-4"></i>'
+        : '<i data-lucide="sun" class="w-4 h-4"></i>';
+      lucide.createIcons();
+    }
+    updateThemeIcon();
+
+    themeBtn.addEventListener('click', () => {
+      html.classList.toggle('light');
+      localStorage.setItem('portfolio-theme', html.classList.contains('light') ? 'light' : 'dark');
+      updateThemeIcon();
+      showToast(html.classList.contains('light') ? 'Light mode enabled' : 'Dark mode enabled');
+    });
+
+    // Mobile menu
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Typing animation
+    const roles = [
+      'IoT & Embedded Systems',
+      'PCB Design',
+      'Electronics Testing',
+      'Robotics & Automation',
+      'Wireless Communication'
+    ];
+    const typingText = document.getElementById('typingText');
+    let roleIndex = 0, charIndex = 0, deleting = false;
+
+    function typeRole() {
+      const word = roles[roleIndex];
+      typingText.textContent = word.slice(0, charIndex);
+      if (!deleting) {
+        charIndex++;
+        if (charIndex > word.length) {
+          deleting = true;
+          return setTimeout(typeRole, 1200);
+        }
+      } else {
+        charIndex--;
+        if (charIndex < 0) {
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          charIndex = 0;
+        }
+      }
+      setTimeout(typeRole, deleting ? 45 : 75);
+    }
+    typeRole();
+
+    // Reveal on scroll
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Counters
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return;
+      counters.forEach(counter => {
+        const target = parseFloat(counter.dataset.target);
+        let start = 0;
+        const duration = 1200;
+        const started = performance.now();
+
+        function tick(now) {
+          const progress = Math.min((now - started) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = start + (target - start) * eased;
+          counter.textContent = target % 1 ? value.toFixed(2) : Math.round(value);
+          if (progress < 1) requestAnimationFrame(tick);
+          else counter.textContent = target % 1 ? target.toFixed(2) : target + '+';
+        }
+        requestAnimationFrame(tick);
+      });
+      counterObserver.disconnect();
+    }, { threshold: .3 });
+    if (counters.length) counterObserver.observe(counters[0].closest('section'));
+
+    // Skill bars
+    const skillObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.querySelectorAll('.skill').forEach(skill => {
+          const fill = skill.querySelector('.skill-fill');
+          fill.style.width = skill.dataset.value + '%';
+        });
+        skillObserver.unobserve(entry.target);
+      });
+    }, { threshold: .25 });
+    document.querySelectorAll('#skills').forEach(el => skillObserver.observe(el));
+
+    // Navbar state + progress
+    const navbar = document.getElementById('navbar');
+    const progressLine = document.getElementById('progressLine');
+
+    function updateScrollUI() {
+      navbar.classList.toggle('mt-0', window.scrollY > 30);
+      navbar.classList.toggle('w-full', window.scrollY > 30);
+      const max = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      progressLine.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+    }
+    window.addEventListener('scroll', updateScrollUI, { passive: true });
+    updateScrollUI();
+
+    // Active nav section
+    const sections = document.querySelectorAll('main section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove('nav-active'));
+          const active = document.querySelector('.nav-link[href="#' + entry.target.id + '"]');
+          if (active) active.classList.add('nav-active');
+        }
+      });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    sections.forEach(section => sectionObserver.observe(section));
+
+    // Project filters
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active', 'text-cyan-300'));
+        btn.classList.add('active', 'text-cyan-300');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.project-card').forEach(card => {
+          const categories = card.dataset.category.split(' ');
+          card.classList.toggle('hidden', filter !== 'all' && !categories.includes(filter));
+        });
+      });
+    });
+
+    // Project modal
+    const projectData = {
+      water: {
+        tag: 'Major B.Tech Project',
+        title: 'Floating Water Surface Waste Collector Robot',
+        body: `
+          <p>A robotic system concept for collecting floating debris from water surfaces.</p>
+          <div class="grid sm:grid-cols-2 gap-4 mt-6">
+            <div class="glass rounded-2xl p-4"><b class="text-white">Problem</b><p class="text-sm mt-2">Floating plastic and debris can be difficult and time-consuming to collect manually.</p></div>
+            <div class="glass rounded-2xl p-4"><b class="text-white">Technology</b><p class="text-sm mt-2">Embedded systems, motors, sensors, IoT and robotics.</p></div>
+            <div class="glass rounded-2xl p-4"><b class="text-white">Features</b><p class="text-sm mt-2">Floating platform, collection mechanism, control and sensor integration.</p></div>
+            <div class="glass rounded-2xl p-4"><b class="text-white">Role</b><p class="text-sm mt-2">System concept, electronics integration, control logic and documentation.</p></div>
+          </div>`
+      },
+      notice: {
+        tag: 'Minor B.Tech Project',
+        title: 'Smart Notice Board',
+        body: `
+          <p>IoT-based digital notice board for wireless content updates and dynamic LED-matrix information display.</p>
+          <div class="grid sm:grid-cols-2 gap-4 mt-6">
+            <div class="glass rounded-2xl p-4"><b class="text-white">Controller</b><p class="text-sm mt-2">ESP8266-based wireless control.</p></div>
+            <div class="glass rounded-2xl p-4"><b class="text-white">Display</b><p class="text-sm mt-2">LED matrix with dynamic information output.</p></div>
+            <div class="glass rounded-2xl p-4"><b class="text-white">Connectivity</b><p class="text-sm mt-2">Wi-Fi / IoT communication.</p></div>
+            <div class="glass rounded-2xl p-4"><b class="text-white">Role</b><p class="text-sm mt-2">Firmware, display logic, wireless communication and interface planning.</p></div>
+          </div>`
+      },
+      robocar: {
+        tag: 'Diploma Final Project',
+        title: 'Remote-Controlled RoboCar',
+        body: `
+          <p>Wireless robotic vehicle developed to explore motor control, embedded logic and remote movement.</p>
+          <div class="grid sm:grid-cols-2 gap-4 mt-6">
+            <div class="glass rounded-2xl p-4"><b class="text-white">Control</b><p class="text-sm mt-2">Remote directional movement.</p></div>
+            <div class="glass rounded-2xl p-4"><b class="text-white">Hardware</b><p class="text-sm mt-2">Microcontroller, motor driver and DC motors.</p></div>
+            <div class="glass rounded-2xl p-4"><b class="text-white">Learning</b><p class="text-sm mt-2">Motor control, assembly and testing.</p></div>
+            <div class="glass rounded-2xl p-4"><b class="text-white">Role</b><p class="text-sm mt-2">Circuit integration, motor control and practical testing.</p></div>
+          </div>`
+      },
+      portfolio: {
+        tag: 'Web / UI Project',
+        title: 'Interactive Engineering Portfolio',
+        body: `
+          <p>Responsive single-page portfolio designed around a premium glassmorphism interface.</p>
+          <div class="grid sm:grid-cols-2 gap-4 mt-6">
+            <div class="glass rounded-2xl p-4"><b class="text-white">UI</b><p class="text-sm mt-2">Glassmorphism, gradients and responsive layouts.</p></div>
+            <div class="glass rounded-2xl p-4"><b class="text-white">Interaction</b><p class="text-sm mt-2">Theme switcher, filters, modals and animations.</p></div>
+            <div class="glass rounded-2xl p-4"><b class="text-white">Stack</b><p class="text-sm mt-2">HTML5, Tailwind CSS and Vanilla JavaScript.</p></div>
+            <div class="glass rounded-2xl p-4"><b class="text-white">Deployment</b><p class="text-sm mt-2">Ready for GitHub Pages / static hosting.</p></div>
+          </div>`
+      }
+    };
+
+    const projectModal = document.getElementById('projectModal');
+    function openProject(key) {
+      const data = projectData[key];
+      if (!data) return;
+      document.getElementById('modalTag').textContent = data.tag;
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalBody').innerHTML = data.body;
+      projectModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    document.querySelectorAll('.details-btn').forEach(btn => btn.addEventListener('click', () => openProject(btn.dataset.project)));
+    document.getElementById('modalClose').addEventListener('click', () => closeModal(projectModal));
+    projectModal.addEventListener('click', e => { if (e.target === projectModal) closeModal(projectModal); });
+
+    // Certificate modal
+    const certModal = document.getElementById('certModal');
+    document.querySelectorAll('.cert-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('certTitle').textContent = btn.dataset.title;
+        document.getElementById('certFrame').src = btn.dataset.file;
+        certModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    document.getElementById('certClose').addEventListener('click', () => closeModal(certModal));
+    certModal.addEventListener('click', e => { if (e.target === certModal) closeModal(certModal); });
+
+    function closeModal(modal) {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal.open').forEach(closeModal);
+      }
+    });
+
+    // Contact form -> email client
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const body =
+        'Name: ' + name + '\\n' +
+        'Email: ' + email + '\\n\\n' +
+        message;
+
+      window.location.href =
+        'mailto:shahadabsheikh13@gmail.com' +
+        '?subject=' + encodeURIComponent(subject || ('Portfolio Contact from ' + name)) +
+        '&body=' + encodeURIComponent(body);
+    });
+
+    // Toast
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+    }
+
+    // Dynamic footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
