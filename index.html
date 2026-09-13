@@ -219,7 +219,7 @@
             <a href="#projects" class="px-5 py-3 rounded-xl bg-white text-slate-950 font-bold hover:-translate-y-1 transition shadow-lg">
               View Projects <i data-lucide="arrow-up-right" class="inline w-4 h-4"></i>
             </a>
-            <a href="Shahadab_Sheikh_Resume.pdf" download class="px-5 py-3 rounded-xl glass font-bold hover:-translate-y-1 transition">
+            <a href="{{ url_for("static", filename="Shahadab_Sheikh_Resume.pdf") }}" download class="px-5 py-3 rounded-xl glass font-bold hover:-translate-y-1 transition">
               Download Resume <i data-lucide="download" class="inline w-4 h-4"></i>
             </a>
             <a href="#contact" class="px-5 py-3 rounded-xl glass font-bold hover:-translate-y-1 transition">
@@ -245,7 +245,7 @@
             <div class="absolute -inset-5 rounded-[2rem] bg-gradient-to-r from-cyan-400/10 via-violet-500/15 to-cyan-400/10 blur-2xl"></div>
             <div class="relative gradient-border rounded-[2rem] glass p-4 shadow-violetglow">
               <div class="aspect-[4/5] rounded-[1.4rem] overflow-hidden bg-gradient-to-br from-slate-800 to-slate-950 grid place-items-center">
-                <img src="profile.jpg" alt="Shahadab Sheikh" class="w-full h-full object-cover" onerror="this.style.display='none';document.getElementById('avatarFallback').classList.remove('hidden')">
+                <img src="{{ url_for("static", filename="profile.jpg") }}" alt="Shahadab Sheikh" class="w-full h-full object-cover" onerror="this.style.display='none';document.getElementById('avatarFallback').classList.remove('hidden')">
                 <div id="avatarFallback" class="hidden text-center p-10">
                   <div class="mx-auto w-28 h-28 rounded-full bg-gradient-to-br from-cyan-400 to-violet-500 grid place-items-center text-4xl font-black">SS</div>
                   <p class="mt-5 text-slate-300">Add <b>profile.jpg</b> beside index.html</p>
@@ -497,7 +497,7 @@
             <p class="text-xs text-cyan-300 font-bold uppercase tracking-widest mt-5">Internship</p>
             <h3 class="text-xl font-bold mt-2">Quality Control Internship</h3>
             <p class="text-slate-400 text-sm mt-2">TrueView / Warner Electronics India Pvt. Ltd.</p>
-            <button class="cert-btn mt-5 px-4 py-2 rounded-xl glass text-sm font-bold" data-title="Quality Control Internship Certificate" data-file="certificate-qc.pdf">Preview Certificate</button>
+            <button class="cert-btn mt-5 px-4 py-2 rounded-xl glass text-sm font-bold" data-title="Quality Control Internship Certificate" data-file="{{ url_for("static", filename="certificates/certificate-qc.pdf") }}">Preview Certificate</button>
           </article>
 
           <article class="glass rounded-3xl p-6 reveal">
@@ -505,7 +505,7 @@
             <p class="text-xs text-violet-300 font-bold uppercase tracking-widest mt-5">NSDC</p>
             <h3 class="text-xl font-bold mt-2">Skill Development Certificate</h3>
             <p class="text-slate-400 text-sm mt-2">Add the verified NSDC course / certificate details.</p>
-            <button class="cert-btn mt-5 px-4 py-2 rounded-xl glass text-sm font-bold" data-title="NSDC Skill Development Certificate" data-file="certificate-nsdc.pdf">Preview Certificate</button>
+            <button class="cert-btn mt-5 px-4 py-2 rounded-xl glass text-sm font-bold" data-title="NSDC Skill Development Certificate" data-file="{{ url_for("static", filename="certificates/certificate-nsdc.pdf") }}">Preview Certificate</button>
           </article>
 
           <article class="glass rounded-3xl p-6 reveal">
@@ -513,7 +513,7 @@
             <p class="text-xs text-cyan-300 font-bold uppercase tracking-widest mt-5">Technical Training</p>
             <h3 class="text-xl font-bold mt-2">Electronics / IoT Training</h3>
             <p class="text-slate-400 text-sm mt-2">Add the verified training certificate and issuer.</p>
-            <button class="cert-btn mt-5 px-4 py-2 rounded-xl glass text-sm font-bold" data-title="Technical Training Certificate" data-file="certificate-technical.pdf">Preview Certificate</button>
+            <button class="cert-btn mt-5 px-4 py-2 rounded-xl glass text-sm font-bold" data-title="Technical Training Certificate" data-file="{{ url_for("static", filename="certificates/certificate-technical.pdf") }}">Preview Certificate</button>
           </article>
         </div>
       </div>
