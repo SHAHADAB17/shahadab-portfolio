@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shahadab17.github.io/shahadab-portfolio/sitemap.xml
